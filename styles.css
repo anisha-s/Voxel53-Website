@@ -1,0 +1,1256 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Container inside header for proper alignment */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo */
+header .logo {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Navigation */
+header nav {
+    display: flex;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #1abc9c;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom, rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #1e0c6d;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Sections */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Services Section */
+.service {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service .image-left {
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.service img {
+    max-width: 150px;
+    height: auto;
+    /* border-radius: 20%; */
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    color: #1abc9c;
+    margin-bottom: 15px;
+}
+
+.service p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Team Section */
+/* Team Section */
+/* Ensure the parent container takes the full width */
+/* Ensure container takes up full width and centers the content */
+/* Ensure container takes up full width and centers the content */
+/* Ensure container takes up full width and centers the content */
+#team .container {
+    display: flex;
+    flex-direction: column; /* Stack title and team members vertically */
+    align-items: center; /* Center align the content */
+    padding: 40px;
+}
+
+/* Title Styling */
+#team h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px; /* Space below the title */
+}
+
+/* Team Member Grid Container */
+.team-grid {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: center; /* Center the content horizontally */
+    gap: 40px; /* Add spacing between members */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Team Member Styling */
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px; /* Larger square size */
+    height: 700px; /* Make it a perfect square */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Hover Effect */
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Member Image */
+.team-image {
+    width: 220px; /* Size of the image */
+    height: 220px; /* Size of the image */
+    border-radius: 40%; /* Make the image circular */
+    object-fit: cover; /* Ensure image covers the area */
+    margin-bottom: 20px; /* Space between image and text */
+}
+
+/* Team Member Text Styling */
+.team-details {
+    text-align: center;
+}
+
+.team-details h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.team-details p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Team Member Title (Role) Styling */
+.team-title {
+    font-size: 1.1rem;          /* Slightly smaller font size than the name */
+    color: #7f8c8d;             /* Lighter gray color for the title */
+    font-weight: 600;           /* Semi-bold font weight */
+    margin-top: 5px;            /* Add some space between the name and title */
+}
+
+/* Responsive Design: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+    .team-member {
+        width: 300px;  /* Adjust width for medium screens */
+        height: 300px; /* Keep it square */
+    }
+
+    .team-grid {
+        flex-direction: column; /* Stack the team members vertically on smaller screens */
+        align-items: center; /* Center align vertically */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        width: 250px;  /* Adjust width for small screens */
+        height: 250px; /* Keep it square */
+    }
+}
+
+
+/* News Section */
+.news-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.news-card .news-card-content {
+    display: flex;
+    align-items: center;
+}
+
+.news-card img {
+    max-width: 700px;
+    margin-right: 20px;
+    height: 325px;
+}
+
+.news-card h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.news-card a {
+    color: #1a5bbc;
+    text-decoration: none;
+}
+
+.news-card a:hover {
+    text-decoration: underline;
+}
+
+.news-card p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Contact Form */
+.contact-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact-info {
+    width: 45%;
+    margin-right: 5%;
+}
+
+.contact-form {
+    width: 45%;
+}
+
+form {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input, form textarea, form button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #16a085;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Services Section */
+.service {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.service-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.service-content img {
+    max-width: 250px;
+    height: auto;
+
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    color: #1abc9c;
+    margin-bottom: 15px;
+}
+
+.service p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Team Section */
+.team-member {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.team-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.team-content img {
+    max-width: 150px;
+    height: auto;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.team-member p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Contact Form */
+.contact-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Styling for form card */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+/* Form fields (input, textarea, button) */
+form input,
+form textarea,
+form button {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Focus effect for inputs */
+form input:focus,
+form textarea:focus {
+    border-color: #1abc9c;
+    outline: none;
+    box-shadow: 0 0 8px rgba(26, 188, 156, 0.4);
+}
+
+/* Button style */
+form button {
+    background-color: #1abc9c;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Button hover effect */
+form button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+/* Card hover effect (for the form container) */
+.contact-form:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Label styling */
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Responsive adjustment for mobile */
+@media (max-width: 768px) {
+    .contact-flex {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Contact Form */
+.contact-form {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form label styling */
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left;
+}
+
+/* Input and Textarea styling */
+form input, form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Placeholder text */
+form input::placeholder, form textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Make the textarea bigger */
+form textarea {
+    height: 150px;
+}
+
+/* Button style */
+form button {
+    background-color: #16a085;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 12px 0;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Button hover effect */
+form button:hover {
+    background-color: #d4c6e0;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* About Us Section */
+.about-us {
+    /* background: linear-gradient(135deg, #d0cfd4 90%,  #eaeaee 10%); Gradient background */
+    background-color: #e3daec;
+    padding: 100px 20px;
+    color: #eee6e6;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Flex container for alignment */
+.about-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* About text area */
+.about-text {
+    flex: 1;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Title with subtle shadow and effect */
+.about-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+}
+
+.about-title::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    background-color: #1abc9c;
+    bottom: -10px;
+    left: 25%;
+    transition: width 0.3s ease;
+}
+
+.about-title:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Description text with improved line height and softer font weight */
+.about-description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+/* Image area with border and hover effect */
+.about-image {
+    flex: 1;
+    max-width: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+.placeholder-image {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.placeholder-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Parallax effect for image */
+.about-image img {
+    transform: translateY(0);
+    will-change: transform;
+    transition: transform 1s ease-in-out;
+}
+
+.about-us:hover .about-image img {
+    transform: translateY(-10px);
+}
+
+/* Background pattern or shape to add texture */
+.about-us::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(246, 244, 248, 0.877), rgba(242, 241, 243, 0.877));
+    border-radius: 50%;
+    border-color: #764ba2;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+    .about-flex {
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .about-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .about-description {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* Hero Section */
+.hero {
+    /*background: linear-gradient(to bottom, rgba(109, 154, 214, 0.8), rgba(155, 89, 182, 0.8)), url('hero-bg.jpg') no-repeat center center/cover;*/
+    color: #fff;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    text-align: center;
+    padding: 20px 20px;
+}
+
+/* Title Styles */
+.welcome-title {
+    font-size: 3.5rem;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Underline effect for the title */
+.welcome-title::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    background-color: #e4d5e7;
+    bottom: -10px;
+    left: 25%;
+    transition: width 0.3s ease;
+}
+
+.welcome-title:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Description Styles */
+.welcome-description {
+    font-size: 1.25rem;
+    color: #fff;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+/* Hover effect for description */
+.welcome-description:hover {
+    color: #f1c40f; /* Slight yellow accent on hover */
+    transition: color 0.3s ease;
+}
+
+/* Image Styles */
+.placeholder-image {
+    margin-top: 40px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+
+    .welcome-description {
+        font-size: 1.1rem;
+    }
+}
+
+/* Second paragraph in About Us */
+.about-description.standout {
+    font-size: 1.3rem; /* Slightly larger font */
+    font-weight: bold; /* Bold font to draw attention */
+    color: #3c3844; /* A standout color */
+    background-color: rgba(150, 30, 197, 0.1); /* Soft background color */
+    padding: 15px; /* Padding to give some space around the text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow to make it pop */
+    margin-top: 20px; /* Space from previous content */
+}
+
+/* News Section Styles */
+.news-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-card {
+    display: none; /* Hide cards by default */
+    flex-shrink: 0;
+    width: 100%;  /* Full width for better responsiveness */
+    max-width: 800px;  /* Adjusted max-width for large screens */
+    height: 500px;  /* Increased height for better balance */
+    margin: 0 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.news-card.active {
+    display: block; /* Show active card */
+}
+
+.news-card-content {
+    padding: 5px;
+    text-align: center;
+    height: 100%; /* Full height for better content distribution */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-image {
+    width: 100%;
+    height: 250px; /* Increased image height */
+    object-fit: cover; /* Ensures the image doesn't get distorted */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.news-text h3 {
+    font-size: 24px;  /* Larger title size */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.news-text h3 a {
+    color: #1a5bbc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-text h3 a:hover {
+    color: #1abc9c;  /* Hover effect on title link */
+}
+
+.news-text p {
+    font-size: 18px;  /* Increased size for description */
+    color: #777;
+}
+
+/* Style for the dots inside the card */
+/* Style for the dots inside the card */
+.dots-container {
+    position: absolute;
+    bottom: 20px;  /* Adjusted space from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    z-index: 10;  /* Ensure dots are above card content */
+}
+
+.dot {
+    height: 14px;
+    width: 14px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #1abc9c;  /* Active dot color */
+}
+
+/* Hover effect for the dots */
+.dot:hover {
+    background-color: #1abc9c;  /* Hover color for dots */
+}
+
+
+/* Hover effects */
+.news-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Hover effect */
+}
+
+.news-card:hover .news-text h3 {
+    color: #1abc9c;  /* Hover effect on title */
+}
+
+.news-card:hover .news-text p {
+    color: #555;  /* Hover effect on description */
+}
+
+/* Make the cards more responsive on smaller screens */
+@media (max-width: 768px) {
+    .news-card {
+        max-width: 90%;  /* Adjust card width for smaller screens */
+        height: auto;  /* Allow flexible height */
+    }
+}
+
+@media (max-width: 480px) {
+    .news-card {
+        max-width: 100%;  /* Full width for mobile devices */
+        height: auto;
+    }
+}
+
+/* Style for the dots inside the card */
+.dots-container {
+    position: absolute;
+    bottom: 20px;  /* Adjusted space from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    z-index: 10;  /* Ensure dots are above card content */
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #8f44d4; /* Color for active dot */
+}
+
+/* Hover effect for the dots */
+.dot:hover {
+    background-color: #16a085;  /* Hover color for dots */
+}
+
+/* News card content */
+.news-card {
+    display: none;  /* Hide all news cards initially */
+}
+
+.news-card.active {
+    display: block;  /* Show active news card */
+}
+
+/* Add styles for Nidus logo container */
+.nidus-logo-container {
+    text-align: center;
+    margin-top: 40px; /* Adjust spacing above the logo */
+}
+
+/* Style the Nidus logo */
+.nidus-logo {
+    max-width: 100px; /* Adjust logo size */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for the logo */
+.nidus-logo:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Optional: Add a link style for the Nidus logo (if needed) */
+.nidus-logo-link {
+    text-decoration: none; /* Remove underline */
+}
+
+/* General Styles for the Gallery */
+/* General Styles for the Gallery */
+.about-image-gallery {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 600px;  /* Increased width by 20% */
+    height: 360px; /* Increased height by 20% */
+    margin: auto;
+    overflow: hidden;  /* Ensures images don’t overflow container */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-top: 5%; */
+}
+
+/* Make sure each slide takes up the full size of the container */
+.mySlides fade{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* display:inline-block; */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Gallery Images - fixed size */
+.gallery-image {
+
+    object-fit: contain;  /* Ensure the entire image is visible */
+    aspect-ratio: 1.5;
+    object-position: center;  /* Center the image in case of empty space */
+    max-width: 100%;  /* Prevent image from expanding beyond the container width */
+    max-height: 100%;  /* Prevent image from expanding beyond the container height */
+}
+
+/* Navigation arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    user-select: none;
+    background-color: rgba(107, 192, 226, 0.836);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Positioning of arrows */
+.prev {
+    left: 10px;
+    transform: translateY(-50%); /* Center the arrow vertically */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.next {
+    right: 10px;
+    transform: translateY(-50%); /* Center the arrow vertically */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover effect for arrows */
+.prev:hover, .next:hover {
+    background-color: rgba(222, 236, 18, 0.952);
+    transform: scale(1.1); /* Slightly enlarge the arrow on hover */
+}
+
+/* Responsive Breakpoints */
+
+/* For smaller screens (Mobile) */
+@media screen and (max-width: 600px) {
+    .slideshow-container {
+        width: 108%;  /* Increase width by 20% */
+        height: 240px;  /* Increase height by 20% */
+    }
+
+    .gallery-image {
+        width: 100%;  /* Ensure images fit within the container */
+        height: 100%;  /* Ensure images fill container height */
+        object-fit: contain;  /* Keep the entire image visible */
+    }
+
+    .prev, .next {
+        font-size: 14px;  /* Smaller arrows for mobile */
+        padding: 10px;
+    }
+}
+
+/* For medium screens (Tablets) */
+@media screen and (max-width: 900px) {
+    .slideshow-container {
+        width: 102% ;  /* Increase width by 20% */
+        height: 300px; /* Increase height by 20% */
+    }
+
+    .gallery-image {
+        width: 100%;  /* Ensure images fit within the container */
+        height: 100%;  /* Ensure images fill container height */
+        object-fit: contain;  /* Keep the entire image visible */
+    }
+
+    .prev, .next {
+        font-size: 16px;  /* Medium arrow size for tablets */
+    }
+}
+
+/* For larger screens (Desktop and bigger) */
+@media screen and (min-width: 1200px) {
+    .slideshow-container {
+        width: 600px;  /* Increased width by 20% */
+        height: 360px; /* Increased height by 20% */
+    }
+}
+
+
+
+
+/* Container for Team Members */
+#team .container {
+    display: flex;
+    flex-direction: column; /* Stack title and team members vertically */
+    align-items: center; /* Center align the content */
+    padding: 40px;
+}
+
+/* Title Styling */
+#team h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px; /* Space below the title */
+}
+
+/* Team Member Grid Container */
+.team-grid {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: center; /* Center the content horizontally */
+    gap: 40px; /* Add spacing between members */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Team Member Styling */
+.team-member {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    justify-content: center;
+    width: 500px; /* Larger size */
+    height: auto; /* Let the height adjust based on content */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-bottom: 20px; /* Space below each team member */
+}
+
+/* Hover Effect */
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Member Image */
+.team-image {
+    width: 220px; /* Size of the image */
+    height: 220px; /* Size of the image */
+    border-radius: 25%; /* Make the image circular */
+    object-fit: cover; /* Ensure image covers the area */
+    margin-bottom: 10px; /* Space between image and text */
+    margin-top: 10px;
+}
+
+/* Team Member Text Styling */
+.team-details {
+    text-align: justify;
+}
+
+/* Name Styling */
+.team-details h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* Title (Role) Styling */
+.team-title {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    font-weight: 600;
+    /* margin-top: 5px; */
+    text-align: center;
+}
+
+/* Description Styling */
+.team-details p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Responsive Design: Adjust layout for smaller screens */
+@media (max-width: 768px) {
+    .team-member {
+        width: 300px;  /* Adjust width for medium screens */
+        padding: 15px;  /* Adjust padding for medium screens */
+    }
+
+    .team-grid {
+        flex-direction: column; /* Stack the team members vertically on smaller screens */
+        align-items: center; /* Center align vertically */
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        width: 250px;  /* Adjust width for small screens */
+        height: auto; /* Let the height adjust based on content */
+    }
+
+    .team-image {
+        width: 200px; /* Smaller image size for small screens */
+        height: 200px; /* Smaller image size for small screens */
+    }
+}
+
+.team-content {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    gap: 10px;
+}
+
+/* .team-content img {
+    max-width: 150px;
+    height: auto;
+} */
+
+.team-member h3 {
+    font-size: 1.5rem;
+    color: #1abc9c;
+}
+
+.team-member p {
+    color: #666;
+    font-size: 1rem;
+}
+
+
+

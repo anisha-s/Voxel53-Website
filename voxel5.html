@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voxel53</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="images\voxel53 logo.png" alt="Voxel53 Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#team">Our Team</a></li>
+                    <!--<li><a href="#collaborators">Collaborators</a></li>-->
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2 class="welcome-title">Welcome to Voxel53</h2>
+            <p class="welcome-description">Bringing 15 years of medical imaging expertise to revolutionize healthcare.</p>
+            <!-- <img src="home-placeholder.png" alt="Home Image" class="placeholder-image"> -->
+        </div>
+    </section>
+
+
+    <!-- About Us Section -->
+    <!-- About Us Section -->
+    <!-- <section id="about" class="section about-us">
+        <div class="container about-flex">
+            <div class="about-text">
+                <h2 class="about-title">About Us</h2>
+                <p class="about-description">After 15 years of research in medical imaging analysis, Voxel 53 is a spin-off from NIDUS (Northern Institute for Deep Learning in Ultrasound), based in Edmonton, Alberta, Canada. Our aim is to share our expertise to make the most of medical imaging as it applies to digital health, by improving clinical workflows, enhancing outcomes, and providing a better patient care experience.</p>
+                <p class="about-description standout">Our name reflects the basic component of any 3D medical image (the voxel, like a 3D pixel), and our origins in Edmonton, which is above the 53rd parallel in latitude.</p>
+            </div>
+            <div class="about-image">
+                <img src="about-placeholder.png" alt="About Us Image" class="placeholder-image">
+            </div>
+        </div>
+    </section> -->
+
+    <section id="about" class="section about-us">
+    <div class="container about-flex">
+        <div class="about-text">
+            <h2 class="about-title">About Us</h2>
+            <p class="about-description">After 15 years of research in medical imaging analysis, Voxel 53 is a spin-off from <a href="https://www.nidusai.ca" target="_blank">NIDUS</a> (Northern Institute for Deep Learning in Ultrasound), based in Edmonton, Alberta, Canada. We are primarily located in the <a href="https://www.ualberta.ca/en/radiology-and-diagnostic-imaging/index.html" target="_blank">Department of Radiology and Diagnostic Imaging</a>, Faculty of Medicine & Dentistry, University of Alberta. Our aim is to share our expertise to make the most of medical imaging as it applies to digital health, by improving clinical workflows, enhancing outcomes, and providing a better patient care experience.</p>
+            <p class="about-description standout">Our name reflects the basic component of any 3D medical image (the voxel, like a 3D pixel), and our origins in Edmonton, which is above the 53rd parallel in latitude.</p>
+            <!-- NIDUS Logo and link -->
+            <div class="nidus-logo-container">
+                <a href="https://www.nidusai.ca" target="_blank" class="nidus-logo-link">
+                    <img src="images\nidus logo.svg" alt="Nidus Logo" class="nidus-logo">
+                </a>
+            </div>
+        </div>
+        
+        <!-- Slideshow with Navigation -->
+        <div class="about-image-gallery">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images\gallery\21stStehscope.png" alt="About Us Image 1" class="gallery-image">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images\gallery\20240301 UAH ultrasound demo Abhilash Cassandra Rod IMG_9228.jpg" alt="About Us Image 2" class="gallery-image">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images\gallery\Cardiac Ultrasound.jpg" alt="About Us Image 3" class="gallery-image">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images\gallery\Wrist Scan Example.jpeg" alt="About Us Image 4" class="gallery-image">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images\gallery\WristScanning1.JPG" alt="About Us Image 5" class="gallery-image">
+                </div>
+
+                <!-- Navigation Arrows -->
+                <a class="prev" onclick="plusSlides(-1)" aria-label="Previous slide">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)" aria-label="Next slide">&#10095;</a>
+            </div>
+        </div>
+    </div>
+
+    
+    </section>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+
+            // Hide all images initially
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            // Reset to the first image if we're at the last
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            // Show the current slide
+            slides[slideIndex - 1].style.display = "block";
+
+            // Change slide every 3 seconds (auto slide change)
+            setTimeout(showSlides, 5000);
+        }
+
+        // Start the slideshow when the page loads
+        showSlides();
+
+        // Function for manual navigation
+        function plusSlides(n) {
+            let slides = document.getElementsByClassName("mySlides");
+
+            slideIndex += n;
+
+            // If at the end, cycle back to the first image
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (slideIndex < 1) {
+                slideIndex = slides.length;
+            }
+
+            // Show the new slide
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+
+    </script>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service">
+                <div class="service-content">
+                    <img src="images\20240301 Consult.JPG" alt="Consultancy Image" class="placeholder-image">
+                    <div>
+                        <h3>Medical Imaging AI Consultancy Services</h3>
+                        <p>Voxel 53 offers expert consulting services for academic and industrial projects in medical imaging. With our combined academic, industrial and clinical experience,  our multidisciplinary expert team will work with you to co-develop medical imaging AI solutions customized to your specific problem or use case.  With our close links to the <a href="https://www.ualberta.ca/index.html" target="_blank">University of Alberta</a>, <a href="https://www.amii.ca/" target="_blank">AMII</a>, one of Canada’s top AI institutes, and <a href="https://cifar.ca/" target="_blank">CIFAR</a>, we can ensure your project uses state-of-the-art AI methodology.  Our lean corporate structure allows us to work quickly and efficiently, and to be responsive to your specific needs.  Whether you are looking to optimize existing systems or develop cutting-edge imaging tools, Voxel 53 is committed to delivering medical imaging AI solutions tailored for your project.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service">
+                <div class="service-content">
+                    <img src="images\WristUltrasound.jpg" alt="Solutions Image" class="placeholder-image">
+                    <div>
+                        <h3>Medical Imaging Solutions</h3>
+                        <p>The flagship product being developed with Voxel 53 assistance is Ultrasound Arm Injury Detect (US-AID), which aims to provide greater access to diagnostic imaging for the assessment of upper limb injuries. These injuries are currently assessed in emergency departments using X-ray, or by outpatient MRI, which involve long wait times. Our solution uses low-cost, pocket-sized ultrasound with images interpreted by AI technology to empower lightly trained users, such as nurses and clinic staff, to perform these examinations, thereby reducing wait times and increasing access to care for those who need it most.</p>
+
+
+                        <p>We are currently evaluating and consulting on several other projects in earlier stages, including simplified acquisition of ultrasound images in many body parts, automated analysis of fetal cardiac ultrasound, automated breast ultrasound (ABUS), and MRI of arthritis at knees and temporomandibular joints (TMJ). 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="service">
+                <div class="service-content">
+                    <img src="images\20240301 UAH ultrasound demo Abhilash Cassandra Rod IMG_9239a.JPG" alt="Education Image" class="placeholder-image">
+                    <div>
+                        <h3>Educational Services in Med Tech</h3>
+                        <p>Voxel 53 aims to provide educational material that leads to more equitable access to healthcare. Our clinical team develops micro-certification modules for specific aspects of medical diagnostic imaging. These modules are designed to empower healthcare professionals with the knowledge and skills needed to utilize advanced imaging technologies effectively. By offering these educational resources, Voxel 53 strives to bridge the gap in healthcare and ensure that high-quality diagnostic tools are more widely accessible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Our Team Section -->
+    <!-- <section id="team" class="section">
+        <div class="container">
+            <h2>Our Team</h2>
+            <div class="team-member">
+                <div class="team-content">
+                    <img src="team-placeholder2.png" alt="Dr. Jacob" class="placeholder-image">
+                    <div>
+                        <h3>Dr. Jacob Jaremko</h3>
+                        <p>Professor of Radiology and AI expert with extensive experience in implementing AI-augmented medical imaging diagnostic tools.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="team-content">
+                    <img src="team-placeholder1.png" alt="Dr. Abhilash" class="placeholder-image">
+                    <div>
+                        <h3>Dr. Abhilash Hareendranathan</h3>
+                        <p>Assistant Professor in Radiology at the University of Alberta with expertise in AI, medical image analysis, and ultrasound imaging.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section> -->
+
+    <!-- Our Team Section -->
+    <!-- Our Team Section -->
+    <section id="team" class="section">
+        <div class="container">
+            <h2>Our Team</h2>
+            
+            <!-- Team Member Grid -->
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="team-content">
+                        <img src="images\jacob.png" alt="Dr. Jacob" class="team-image">
+                        <div class="team-details">
+                            <h3>Dr. Jacob Jaremko</h3>
+                            <p class="team-title">Chief Medical Officer (CMO)</p>
+                            <p>Dr. Jacob Jaremko is a Professor of Radiology and Adjunct Professor of Computing Science at the University of Alberta, a practicing board-certified Pediatric and Musculoskeletal radiologist and partner at Medical Imaging Consultants (mic.ca), and co-founder of 3 startup companies including MEDO.ai.  He has a PhD in Biomedical Engineering.  He is a Canada CIFAR AI Chair and Fellow of AMII, the Alberta Machine Intelligence Institute. His research has focused on developing objective imaging biomarkers of disease in ultrasound and MRI, and on implementing AI-augmented medical imaging diagnostic tools at the clinical point of care -- building the 21st-century stethoscope.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="team-content">
+                        <img src="images\abhilash.JPG" alt="Dr. Abhilash" class="team-image">
+                        <div class="team-details">
+                            <h3>Dr. Abhilash Hareendranathan</h3>
+                            <p class="team-title">Chief Technical Officer (CTO)</p>
+                            <p>Dr. Abhilash Hareendranathan is an Assistant Professor in the <a href="https://www.ualberta.ca/radiology-and-diagnostic-imaging/index.html" target="_blank">Department of Radiology</a>  at the University of Alberta. His research focuses on artificial intelligence (AI), medical image analysis, and ultrasound imaging. With a diverse background, Dr. Hareendranathan has collaborated with research teams at <a href="https://research.sg.panasonic.com/" target="_blank">Panasonic R&D Center</a> in Singapore and <a href="https://www.curefab.com/" target="_blank">Curefab</a> in Germany. Prior to his academic role, he served as the R&D lead at <a href="http://MEDO.ai " target="_blank">MEDO.ai Inc.</a>, an AI start-up dedicated to developing innovative solutions for medical ultrasound. Throughout his career, Dr. Hareendranathan has pioneered AI approaches for automatic biomarker discovery, enhancing the speed and reliability of ultrasound assessments, and improving clinical workflows by empowering lightly trained users.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of team-grid -->
+        </div> <!-- End of container -->
+    </section>
+
+
+    
+    
+
+    <!-- Collaborators Section -->
+    <!--<section id="collaborators" class="section">
+        <div class="container">
+            <h2>Collaborators</h2>
+            <div class="collaborators-scroll">
+                <img src="collaborator-placeholder1.png" alt="Collaborator 1">
+                <img src="collaborator-placeholder2.png" alt="Collaborator 2">
+                <img src="collaborator-placeholder3.png" alt="Collaborator 3">
+            </div>
+        </div>
+    </section>-->
+
+    <!-- News Section -->
+    <!-- <section id="news" class="section">
+        <div class="container">
+            <h2>News</h2>
+            <div class="news-card">
+                <div class="news-card-content">
+                    <img src="news-placeholder1.png" alt="News Image 1" class="placeholder-image">
+                    <div>
+                        <h3><a href="#">New mini ultrasound machine could slash emergency room wait times in Alberta, expert says</a></h3>
+                        <p>| CBC News</p>
+                    </div>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-card-content">
+                    <img src="news-placeholder2.png" alt="News Image 2" class="placeholder-image">
+                    <div>
+                        <h3><a href="#">Portable ultrasound tool uses AI to detect arm fractures more quickly</a></h3>
+                        <p>| Folio (ualberta.ca)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="news-card">
+                <div class="news-card-content">
+                    <img src="news-placeholder3.png" alt="News Image 3" class="placeholder-image">
+                    <div>
+                        <h3><a href="#">Alberta Innovates Provides $12.4 million to Advance Health Innovations</a></h3>
+                        <p>| Alberta Innovates</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- News Section -->
+    <!-- <section id="news" class="section">
+         <div class="container">
+            <h2>News</h2>
+            <div class="news-slider">
+                # News Cards (Each is hidden unless it's active)
+                <div class="news-card active">
+                    <div class="news-card-content">
+                        <img src="news-placeholder1.png" alt="News Image 1" class="placeholder-image">
+                        <div>
+                            <h3><a href="#">New mini ultrasound machine could slash emergency room wait times in Alberta, expert says</a></h3>
+                            <p>| CBC News</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-card-content">
+                        <img src="news-placeholder2.png" alt="News Image 2" class="placeholder-image">
+                        <div>
+                            <h3><a href="#">Portable ultrasound tool uses AI to detect arm fractures more quickly</a></h3>
+                            <p>| Folio (ualberta.ca)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-card-content">
+                        <img src="news-placeholder3.png" alt="News Image 3" class="placeholder-image">
+                        <div>
+                            <h3><a href="#">Alberta Innovates Provides $12.4 million to Advance Health Innovations</a></h3>
+                            <p>| Alberta Innovates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            #Navigation Dots
+            <div class="news-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- News Section -->
+    <!-- News Section -->
+    <section id="news" class="section">
+        <div class="container">
+            <h2>News</h2>
+            <div class="news-slider">
+                <!-- News Cards -->
+                <div class="news-card active" data-index="0">
+                    <div class="news-card-content">
+                        <img src="images\news\news1.png" alt="News Image 1" class="news-image">
+                        <div class="news-text">
+                            <h3><a href="https://www.cbc.ca/news/canada/edmonton/new-mini-ultrasound-machine-could-slash-emergency-room-wait-times-in-alberta-expert-says-1.7138671" target="_blank">New mini ultrasound machine could slash emergency room wait times in Alberta, expert says</a></h3>
+                            <p>| CBC News</p>
+                        </div>
+                    </div>
+                    <div class="dots-container">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                </div>
+                <div class="news-card" data-index="1">
+                    <div class="news-card-content">
+                        <img src="images\news\240226-ultrasound-ai-main-16x9-3000px.jpg" alt="News Image 2" class="news-image">
+                        <div class="news-text">
+                            <h3><a href="https://www.ualberta.ca/folio/2024/02/portable-ultrasound-tool-uses-ai-to-detect-arm-fractures-more-quickly.html" target="_blank">Portable ultrasound tool uses AI to detect arm fractures more quickly</a></h3>
+                            <p>| Folio (ualberta.ca)</p>
+                        </div>
+                    </div>
+                    <div class="dots-container">
+                        <span class="dot" data-index="0"></span>
+                        <span class="dot active" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                </div>
+                <div class="news-card" data-index="2">
+                    <div class="news-card-content">
+                        <img src="images\news\alberta innovates.jpg" alt="News Image 3" class="news-image">
+                        <div class="news-text">
+                            <h3><a href="https://albertainnovates.ca/news/alberta-innovates-provides-12-4-million-to-advance-health-innovations/" target="_blank">Alberta Innovates Provides $12.4 million to Advance Health Innovations</a></h3>
+                            <p>| Alberta Innovates</p>
+                        </div>
+                    </div>
+                    <div class="dots-container">
+                        <span class="dot" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot active" data-index="2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--<script>
+        // Variables to access the elements
+        const slides = document.querySelectorAll('.news-card');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0; // Track the current active slide
+        
+        // Function to show the selected slide and activate corresponding dot
+        function showSlide(index) {
+            // Hide all slides and reset dots
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+        
+            // Show the selected slide and activate the corresponding dot
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+        
+        // Go to the next slide automatically
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length; // Loop back to the first slide
+            showSlide(currentIndex);
+        }
+        
+        // Set the interval to change slides every 5 seconds
+        setInterval(nextSlide, 8000);
+        
+        // Initialize the first slide
+        showSlide(currentIndex);
+        
+        // Add click event listener to dots to navigate manually
+        dots.forEach(dot => {
+            dot.addEventListener('click', function () {
+                currentIndex = parseInt(dot.getAttribute('data-index')); // Get index from data-index
+                showSlide(currentIndex);
+            });
+        });
+        </script>-->
+
+        <script>
+            // Variables to access the elements
+            // Variables to access the elements
+            const slides = document.querySelectorAll('.news-card');
+            const dots = document.querySelectorAll('.dot');
+            let currentIndex = 0; // Track the current active slide
+
+            // Function to show the selected slide and activate corresponding dot
+            function showSlide(index) {
+                // Remove active class from all slides and dots
+                slides.forEach(slide => slide.classList.remove('active'));
+                //dots.forEach(dot => dot.classList.remove('active'));
+
+                // Show the selected slide and activate the corresponding dot
+                slides[index].classList.add('active');
+                //dots[index].classList.add('active');
+            }
+
+            // Go to the next slide automatically
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length; // Loop back to the first slide
+                showSlide(currentIndex);
+            }
+
+            // Set the interval to change slides every 8 seconds
+            setInterval(nextSlide, 8000);
+
+            // Initialize the first slide and its dot
+            showSlide(currentIndex);
+
+            // Add click event listener to dots to navigate manually
+            dots.forEach(dot => {
+                dot.addEventListener('click', function () {
+                    currentIndex = parseInt(dot.getAttribute('data-index')); // Get index from data-index
+                    showSlide(currentIndex);
+                });
+            });
+
+        </script>
+        
+
+    <!-- Contact Us Section -->
+    <!-- Contact Form Section -->
+    <section id="contact" class="section">
+        <div class="container contact-flex">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>Email: info@voxel53.com</p>
+                <p>Phone: +1 (780) 123-4567</p>
+                <p>Address: Edmonton, Alberta, Canada</p>
+            </div>
+            <form action="/submit" method="POST" class="contact-form">
+                <!-- Name Input -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <!-- Email Input -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                <!-- Message Textarea -->
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Enter your message here" required></textarea>
+
+                <!-- Submit Button -->
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Voxel53. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
