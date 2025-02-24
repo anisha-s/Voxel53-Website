@@ -1116,9 +1116,6 @@ form button:hover {
     }
 }
 
-
-
-
 /* Container for Team Members */
 #team .container {
     display: flex;
@@ -1237,11 +1234,6 @@ form button:hover {
     gap: 10px;
 }
 
-/* .team-content img {
-    max-width: 150px;
-    height: auto;
-} */
-
 .team-member h3 {
     font-size: 1.5rem;
     color: #1abc9c;
@@ -1252,5 +1244,183 @@ form button:hover {
     font-size: 1rem;
 }
 
+/* Make sure the overall layout adjusts */
+.container {
+    width: 100%;
+    padding: 20px;
+}
+
+/* For smaller screens, adjust padding/margin */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+/* For mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .news-card {
+        width: 90%;  /* Allow cards to adjust to smaller screen width */
+        height: auto;  /* Make the card height flexible */
+        margin: 0 15px;  /* Adjust spacing between cards */
+    }
+}
+
+/* For mobile */
+@media (max-width: 480px) {
+    .news-card {
+        width: 100%;  /* Full width for mobile screens */
+        height: auto;
+    }
+
+    .news-text h3 {
+        font-size: 18px;  /* Adjust the title font size for smaller screens */
+    }
+
+    .news-text p {
+        font-size: 14px;  /* Adjust description font size */
+    }
+}
+
+/* For smaller screens */
+@media screen and (max-width: 600px) {
+    .slideshow-container {
+        width: 100%;  /* Ensure the slideshow takes the full width */
+        height: 240px;  /* Adjust height for smaller screens */
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;  /* Keep image fully visible */
+    }
+
+    .prev, .next {
+        font-size: 14px;  /* Smaller arrow size */
+        padding: 10px;
+    }
+}
+
+/* For tablets */
+@media screen and (max-width: 900px) {
+    .slideshow-container {
+        width: 100%;  /* Ensure it takes the full width */
+        height: 300px; /* Adjust height for tablets */
+    }
+
+    .prev, .next {
+        font-size: 16px;  /* Adjust arrow size */
+    }
+}
+
+/* For medium screens (Tablets) */
+@media (max-width: 768px) {
+    .team-grid {
+        flex-direction: column; /* Stack team members vertically */
+        align-items: center; /* Center align team members */
+        gap: 20px;  /* Adjust gap between members */
+    }
+
+    .team-member {
+        width: 90%;  /* Adjust width */
+        padding: 15px;  /* Adjust padding */
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .team-member {
+        width: 100%;  /* Full width for mobile */
+        padding: 10px;
+    }
+
+    .team-image {
+        width: 150px; /* Reduce image size for mobile */
+        height: 150px;
+    }
+
+    .team-details p {
+        font-size: 14px;  /* Adjust text size */
+    }
+}
+
+/* For smaller screens */
+@media (max-width: 600px) {
+    h1, h2, h3 {
+        font-size: 1.2rem; /* Adjust header sizes */
+    }
+
+    p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+}
+
+/* For medium screens (Tablets) */
+@media (max-width: 900px) {
+    h1, h2, h3 {
+        font-size: 1.4rem;  /* Adjust header sizes for tablets */
+    }
+
+    p {
+        font-size: 1rem; /* Adjust paragraph size for readability */
+    }
+}
+
+/* Adjust styles for smaller screens */
+@media (max-width: 768px) {
+    .about-description.standout {
+        font-size: 1.1rem; /* Slightly smaller text for mobile */
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+/* For mobile */
+@media (max-width: 480px) {
+    .about-description.standout {
+        font-size: 1rem;  /* Even smaller font size for mobile */
+        padding: 8px; /* Smaller padding */
+    }
+}
+
+/* Container for Google Form */
+.google-form-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 56.25%;  /* 16:9 aspect ratio, adjust as needed */
+    margin: 0 auto;  /* Centers the form */
+}
+
+/* Style the iframe inside the container */
+.google-form-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  /* Ensures iframe takes full width of container */
+    height: 100%;  /* Ensures iframe adjusts its height dynamically */
+    border: none;  /* Removes the iframe border */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 600px) {
+    .google-form-container {
+        padding-bottom: 80%;  /* Adjusted aspect ratio for smaller screens */
+    }
+}
+
+/* For tablet and medium screens */
+@media (max-width: 900px) {
+    .google-form-container {
+        padding-bottom: 100%;  /* Adjusted aspect ratio for medium-sized screens */
+    }
+}
 
 
