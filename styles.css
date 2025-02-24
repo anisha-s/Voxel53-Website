@@ -1335,27 +1335,13 @@ form button:hover {
 /* For mobile screens (up to 480px) */
 @media (max-width: 480px) {
     .team-member {
-        width: 250px;  /* Adjust width for small screens */
+        width: 200px;  /* Adjust width for small screens */
         height: auto; /* Let the height adjust based on content */
     }
 
     .team-image {
         width: 200px; /* Smaller image size for small screens */
         height: 200px; /* Smaller image size for small screens */
-    }
-}
-
-/* For Tablets (up to 900px) */
-@media (max-width: 900px) {
-    .team-member {
-        width: 45%;  /* Adjust width for tablets */
-    }
-}
-
-/* For Larger Screens (Desktop and bigger) */
-@media (min-width: 1200px) {
-    .team-member {
-        width: 22%; /* 4 team members per row on larger screens */
     }
 }
 
@@ -1463,28 +1449,50 @@ form button:hover {
     }
 }
 
-/* For Smaller Screens (below 768px) */
+/* For smaller screens (Mobile) */
 @media (max-width: 768px) {
+    /* Stack logo and nav vertically for mobile */
     header {
         flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
+        align-items: center;  /* Center align for mobile */
+        text-align: center;  /* Align text center */
     }
 
     .logo {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
+        font-size: 2rem;  /* Adjust font size of the logo */
+        margin-bottom: 10px;  /* Provide spacing below the logo */
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column;  /* Stack the navigation links vertically */
+        align-items: center;  /* Center-align the items */
+        padding-left: 0;  /* Remove padding */
     }
 
     nav ul li {
-        margin-bottom: 10px;
+        margin-bottom: 15px;  /* Add space between each navigation link */
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;  /* Adjust font size for navigation links */
+    }
+
+    .menu-toggle {
+        display: block;  /* Display menu toggle (hamburger) for mobile */
     }
 }
+
+.menu-toggle {
+    display: none;  /* Initially hidden */
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;  /* Show menu toggle on small screens */
+        cursor: pointer;
+    }
+}
+
 
 
 
