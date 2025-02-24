@@ -1244,7 +1244,6 @@ form button:hover {
     font-size: 1rem;
 }
 
-/* Make sure the overall layout adjusts */
 .container {
     width: 100%;
     padding: 20px;
@@ -1320,36 +1319,46 @@ form button:hover {
     }
 }
 
-/* For medium screens (Tablets) */
+/* For smaller screens (Mobile) */
 @media (max-width: 768px) {
-    .team-grid {
-        flex-direction: column; /* Stack team members vertically */
-        align-items: center; /* Center align team members */
-        gap: 20px;  /* Adjust gap between members */
+    .team-member {
+        width: 300px;  /* Adjust width for medium screens */
+        padding: 15px;  /* Adjust padding for medium screens */
     }
 
-    .team-member {
-        width: 90%;  /* Adjust width */
-        padding: 15px;  /* Adjust padding */
+    .team-grid {
+        flex-direction: column; /* Stack the team members vertically on smaller screens */
+        align-items: center; /* Center align vertically */
     }
 }
 
-/* For mobile screens */
+/* For mobile screens (up to 480px) */
 @media (max-width: 480px) {
     .team-member {
-        width: 100%;  /* Full width for mobile */
-        padding: 10px;
+        width: 250px;  /* Adjust width for small screens */
+        height: auto; /* Let the height adjust based on content */
     }
 
     .team-image {
-        width: 150px; /* Reduce image size for mobile */
-        height: 150px;
-    }
-
-    .team-details p {
-        font-size: 14px;  /* Adjust text size */
+        width: 200px; /* Smaller image size for small screens */
+        height: 200px; /* Smaller image size for small screens */
     }
 }
+
+/* For Tablets (up to 900px) */
+@media (max-width: 900px) {
+    .team-member {
+        width: 45%;  /* Adjust width for tablets */
+    }
+}
+
+/* For Larger Screens (Desktop and bigger) */
+@media (min-width: 1200px) {
+    .team-member {
+        width: 22%; /* 4 team members per row on larger screens */
+    }
+}
+
 
 /* For smaller screens */
 @media (max-width: 600px) {
@@ -1422,5 +1431,60 @@ form button:hover {
         padding-bottom: 100%;  /* Adjusted aspect ratio for medium-sized screens */
     }
 }
+
+
+/* For Mobile (up to 600px) */
+@media (max-width: 600px) {
+    #services h2 {
+        font-size: 2rem; /* Adjust title font size */
+    }
+
+    .services-container {
+        justify-content: center;
+    }
+
+    .service-card {
+        width: 100%; /* Full width on small screens */
+        padding: 15px; /* Adjust padding */
+    }
+}
+
+/* For Tablets (up to 900px) */
+@media (max-width: 900px) {
+    .service-card {
+        width: 45%; /* 2 cards per row on tablets */
+    }
+}
+
+/* For Larger Screens */
+@media (min-width: 1200px) {
+    .service-card {
+        width: 22%; /* 4 cards per row on large screens */
+    }
+}
+
+/* For Smaller Screens (below 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+}
+
 
 
