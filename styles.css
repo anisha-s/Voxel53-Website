@@ -1419,26 +1419,66 @@ form button:hover {
 }
 /* For smaller screens (Mobile) */
 @media (max-width: 768px) {
-    .services-container {
-        flex-direction: column;  /* Stack the image and text vertically */
-        align-items: center;  /* Center-align the items */
-        padding: 20px;
+    /* Ensure the services section is responsive */
+    #services .container {
+        padding: 20px; /* Add padding around the section */
     }
 
-    .service-card {
-        width: 90%;  /* Full width for the cards */
-        margin-bottom: 20px;  /* Space between service cards */
+    /* Stack the service cards vertically */
+    .service {
+        width: 100%; /* Full width for each service */
+        margin-bottom: 20px; /* Add space between the service cards */
     }
 
-    .service-image {
-        order: -1;  /* Move the image to the top */
+    /* Adjust service content layout */
+    .service-content {
+        display: flex;
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center;  /* Center align the content */
+        text-align: center; /* Ensure text is centered */
+    }
+
+    /* Adjust images to be full width and moved to the top */
+    .placeholder-image {
         width: 100%;  /* Make the image full width */
-        height: auto;  /* Maintain aspect ratio */
-        margin-bottom: 15px;  /* Add some space below the image */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 15px;  /* Add space between the image and text */
     }
 
-    .service-description {
-        text-align: center;  /* Center-align the text under the image */
+    /* Ensure the text content is centered and takes full width */
+    .service-content h3 {
+        font-size: 1.6rem; /* Adjust heading size */
+        margin-bottom: 10px; /* Add space below the heading */
+    }
+
+    .service-content p {
+        font-size: 1rem;  /* Adjust text size for better readability */
+        color: #555; /* Text color */
+        line-height: 1.6; /* Better line spacing */
+        margin-bottom: 15px; /* Add space below paragraphs */
+    }
+
+    /* Adjust the links for better display */
+    .service-content a {
+        color: #1a5bbc; /* Color for links */
+        text-decoration: none; /* Remove underline */
+    }
+
+    .service-content a:hover {
+        color: #16a085; /* Change color on hover */
+    }
+}
+
+/* For very small screens (Mobile portrait, smaller than 480px) */
+@media (max-width: 480px) {
+    /* Make the headings slightly smaller for very small screens */
+    .service-content h3 {
+        font-size: 1.4rem;
+    }
+
+    /* Make the paragraph text smaller */
+    .service-content p {
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
     }
 }
 
