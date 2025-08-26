@@ -4,147 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voxel53</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modif_styles.css">
+    <link rel="icon" href="./images/icons/Voxel Icon TP.ico" />
 </head>
 <body>
+    <a id="top"></a>
     <!-- Header -->
     <header>
-        <div class="container">
-            <img src="images\voxel53 logo.png" alt="Voxel53 Logo" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#team">Our Team</a></li>
+        <div class="container" id="header_container">
+            <a href="#top" target="_blank" id="voxel-header-link">
+                <img src="./images/logos/Voxel Horizontal TP.png" alt="Voxel53 Logo" class="logo" id="header-img">
+            </a>
+            <nav class="navbar">
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <img src="./images/icons/Hamburger Menu Button.png" alt="Hamburger Menu Icon" style="height:31.5px; width:40px;" id="ham_menu">
+                    
+                </button>
+                <ul class="nav-menu">
+                    <li><a id="home-link" href="#top">HOME</a></li>
+                    <li><a id="about-us-link" href="#top">ABOUT US</a></li>
+                    <li><a id="services-link" href="#services">SERVICES</a></li>
+                    <li><a id="team-link" href="#team">OUR TEAM</a></li>
                     <!--<li><a href="#collaborators">Collaborators</a></li>-->
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a id="new-link" href="#news">NEWS</a></li>
+                    <li><a id="contact-link" href="#contact">CONTACT US</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- HAMBURGER MENU HANDLING -->
+    <script>
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const page_links = ["home-link", "about-us-link", "services-link", "team-link", "new-link", "contact-link"];
+
+            // Check to see if links were clicked.
+            document.addEventListener('click', (event)=>{
+                // If we did, close the hamburger menu.
+                if(page_links.includes(event.target.id)){
+                    if(navMenu.classList.contains('active')){
+                        navMenu.classList.remove('active');
+                    }
+                }
+            });
+
+            // Check the hamburger menu interactions.
+            navToggle.addEventListener('click', () => {
+                // If clicked, toggle the menu.
+                navMenu.classList.toggle('active');
+            });
+
+    </script>
+
     <!-- Home Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <h2 class="welcome-title">Welcome to Voxel53</h2>
-            <p class="welcome-description">Bringing 15 years of medical imaging expertise to revolutionize healthcare.</p>
-            <!-- <img src="home-placeholder.png" alt="Home Image" class="placeholder-image"> -->
+        <div id="welcome-container" class="container">
+            <div id="message-container">
+                <p id="welcome-message">Bringing 15 years of medical imaging expertise to revolutionize healthcare.</p>
+                <!-- <img src="home-placeholder.png" alt="Home Image" class="placeholder-image"> -->
+
+                <p id="brief-about1" class="brief-abouts">Voxel53 is an AI consultancy specializing in medical imaging, founded by the principal
+                    investigators (PIs) of the <a href="https://www.nidusai.ca" target="_blank" class="hero-links">NIDUS lab</a>
+                    (Northern Institute for Deep Learning in Ultrasound),
+                    Dr. Jacob Jaremko (Radiologist/Professor) and Dr. Hareendrananthan (Computer Scientist/Assistant Professor). A
+                    spin-off
+                    from NIDUS, Voxel53 translates over 15 years of research into AI-driven solutions that enhance clinical workflows
+                    and
+                    diagnostic accuracy.
+                </p>
+
+                <p id="brief-about2" class="brief-abouts">Based in the <a href="https://www.ualberta.ca/en/radiology-and-diagnostic-imaging/index.html"
+                        target="_blank" class="hero-links">Department
+                        of Radiology and Diagnostic Imaging</a> at the University of Alberta, we leverage academic and clinical
+                    expertise to
+                    develop cutting-edge medical imaging AI tools that advance digital health and improve patient care.
+                </p>
+                
+            </div>
+            <!-- <div id="placeholder-container">
+
+            </div> -->
+            
+            
         </div>
     </section>
 
-
-    <section id="about" class="section about-us">
-    <div class="container about-flex">
-        <div class="about-text">
-            <h2 class="about-title">About Us</h2>
-            <p class="about-description">Voxel53 is an AI consultancy specializing in medical imaging, founded by the principal investigators (PIs) of the <a href="https://www.nidusai.ca" target="_blank">NIDUS lab</a> (Northern Institute for Deep Learning in Ultrasound), Dr. Jacob Jaremko (Radiologist/Professor) and Dr. Hareendrananthan (Computer Scientist/Assistant Professor). A spin-off from NIDUS, Voxel53 translates over 15 years of research into AI-driven solutions that enhance clinical workflows and diagnostic accuracy.</p>
-
-<p class="about-description">Based in the<a href="https://www.ualberta.ca/en/radiology-and-diagnostic-imaging/index.html" target="_blank">Department of Radiology and Diagnostic Imaging</a> at the University of Alberta, we leverage academic and clinical expertise to develop cutting-edge medical imaging AI tools that advance digital health and improve patient care.</p>
-                <!--After 15 years of research in medical imaging analysis, Voxel 53 is a spin-off from <a href="https://www.nidusai.ca" target="_blank">NIDUS</a> (Northern Institute for Deep Learning in Ultrasound), based in Edmonton, Alberta, Canada. We are primarily located in the <a href="https://www.ualberta.ca/en/radiology-and-diagnostic-imaging/index.html" target="_blank">Department of Radiology and Diagnostic Imaging</a>, Faculty of Medicine & Dentistry, University of Alberta. Our aim is to share our expertise to make the most of medical imaging as it applies to digital health, by improving clinical workflows, enhancing outcomes, and providing a better patient care experience.</p>-->
-            <p class="about-description standout">Our name reflects the basic component of any 3D medical image (the voxel, like a 3D pixel), and our origins in Edmonton, which is above the 53rd parallel in latitude.</p>
-            <!-- NIDUS Logo and link -->
-            <div class="nidus-logo-container">
-                <a href="https://www.nidusai.ca" target="_blank" class="nidus-logo-link">
-                    <img src="images\nidus logo.svg" alt="Nidus Logo" class="nidus-logo">
-                </a>
-            </div>
+    <section id="about" class="about-us">
+    <div id="about-main-container">
+        <div id="about-voxel-container">
+            <img src="images/logos/Voxel Stack Background.png" alt="Voxel Logo" id="about-voxel-logo">
+            <!--After 15 years of research in medical imaging analysis, Voxel 53 is a spin-off from <a href="https://www.nidusai.ca" target="_blank">NIDUS</a> (Northern Institute for Deep Learning in Ultrasound), based in Edmonton, Alberta, Canada. We are primarily located in the <a href="https://www.ualberta.ca/en/radiology-and-diagnostic-imaging/index.html" target="_blank">Department of Radiology and Diagnostic Imaging</a>, Faculty of Medicine & Dentistry, University of Alberta. Our aim is to share our expertise to make the most of medical imaging as it applies to digital health, by improving clinical workflows, enhancing outcomes, and providing a better patient care experience.</p>-->
+            <p id="standout">Our name reflects the basic component of any 3D medical image (the voxel, like
+                a 3D pixel), and our origins in Edmonton, which is above the 53rd parallel in latitude.</p>
         </div>
         
-        <!-- Slideshow with Navigation -->
-        <div class="about-image-gallery">
-            <div class="slideshow-container">
-                <div class="mySlides fade">
-                    <img src="images\gallery\21stStehscope.png" alt="About Us Image 1" class="gallery-image">
-                </div>
-                <div class="mySlides fade">
-                    <img src="images\gallery\20240301 UAH ultrasound demo Abhilash Cassandra Rod IMG_9228.jpg" alt="About Us Image 2" class="gallery-image">
-                </div>
-                <div class="mySlides fade">
-                    <img src="images\gallery\Cardiac Ultrasound.jpg" alt="About Us Image 3" class="gallery-image">
-                </div>
-                <div class="mySlides fade">
-                    <img src="images\gallery\Wrist Scan Example.jpeg" alt="About Us Image 4" class="gallery-image">
-                </div>
-                <div class="mySlides fade">
-                    <img src="images\gallery\WristScanning1.JPG" alt="About Us Image 5" class="gallery-image">
-                </div>
-
-                <!-- Navigation Arrows -->
-                <a class="prev" onclick="plusSlides(-1)" aria-label="Previous slide">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)" aria-label="Next slide">&#10095;</a>
-            </div>
+        <!-- NIDUS Logo and link -->
+        <div id="nidus-logo-container">
+            
+            <p id="nidus-header">Visit the Northern Institute for <br> Deep Learning in Ultrasound</p>
+            <a href="https://www.nidusai.ca" target="_blank" id="nidus-link">
+                <img src="images\logos\nidus logo.png" alt="Nidus Logo" id="nidus-logo-link">
+            </a>
+        </div>
+        
+       
         </div>
     </div>
 
     
     </section>
 
-    <script>
-        let slideIndex = 0;
-
-        function showSlides() {
-            let slides = document.getElementsByClassName("mySlides");
-
-            // Hide all images initially
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            slideIndex++;
-
-            // Reset to the first image if we're at the last
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-
-            // Show the current slide
-            slides[slideIndex - 1].style.display = "block";
-
-            // Change slide every 3 seconds (auto slide change)
-            setTimeout(showSlides, 5000);
-        }
-
-        // Start the slideshow when the page loads
-        showSlides();
-
-        // Function for manual navigation
-        function plusSlides(n) {
-            let slides = document.getElementsByClassName("mySlides");
-
-            slideIndex += n;
-
-            // If at the end, cycle back to the first image
-            if (slideIndex > slides.length) {
-                slideIndex = 1;
-            }
-
-            if (slideIndex < 1) {
-                slideIndex = slides.length;
-            }
-
-            // Show the new slide
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            slides[slideIndex - 1].style.display = "block";
-        }
-
-
-    </script>
+    <section id="intermediate-section1" class="intermediate-sections"></section>
 
     <!-- Services Section -->
     <section id="services" class="section">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2 style="color:white">Our Services</h2>
             <div class="service">
                 <div class="service-content">
-                    <img src="images\20240301 Consult.JPG" alt="Consultancy Image" class="placeholder-image">
+                    <img src="images\AI_Medical_Image.jpeg" alt="Consultancy Image" class="placeholder-image">
                     <div>
                         <h3>Medical Imaging AI Consultancy Services</h3>
-                        <p>Voxel 53 offers expert consulting services for academic and industrial projects in medical imaging. With our combined academic, industrial and clinical experience,  our multidisciplinary expert team will work with you to co-develop medical imaging AI solutions customized to your specific problem or use case.  With our close links to the <a href="https://www.ualberta.ca/index.html" target="_blank">University of Alberta</a>, <a href="https://www.amii.ca/" target="_blank">AMII</a>, one of Canada’s top AI institutes, and <a href="https://cifar.ca/" target="_blank">CIFAR</a>, we can ensure your project uses state-of-the-art AI methodology.  Our lean corporate structure allows us to work quickly and efficiently, and to be responsive to your specific needs.  Whether you are looking to optimize existing systems or develop cutting-edge imaging tools, Voxel 53 is committed to delivering medical imaging AI solutions tailored for your project.</p>
+                        <p>Voxel 53 offers expert consulting services for academic and industrial projects in medical imaging. With our combined academic, industrial and clinical experience,  our multidisciplinary expert team will work with you to co-develop medical imaging AI solutions customized to your specific problem or use case.  With our close links to the <a href="https://www.ualberta.ca/index.html" target="_blank" class="service-links">University of Alberta</a>, <a href="https://www.amii.ca/" target="_blank" class="service-links">AMII</a>, one of Canada’s top AI institutes, and <a href="https://cifar.ca/" target="_blank" class="service-links">CIFAR</a>, we can ensure your project uses state-of-the-art AI methodology.  Our lean corporate structure allows us to work quickly and efficiently, and to be responsive to your specific needs.  Whether you are looking to optimize existing systems or develop cutting-edge imaging tools, Voxel 53 is committed to delivering medical imaging AI solutions tailored for your project.</p>
                     </div>
                 </div>
             </div>
@@ -165,7 +147,7 @@
                 <div class="service-content">
                     <img src="images\20240301 UAH ultrasound demo Abhilash Cassandra Rod IMG_9239a.JPG" alt="Education Image" class="placeholder-image">
                     <div>
-                        <h3>Educational Services in Med Tech</h3>
+                        <h3 class="service-headings">Educational Services in Med Tech</h3>
                         <p>Voxel 53 aims to provide educational material that leads to more equitable access to healthcare. Our clinical team develops micro-certification modules for specific aspects of medical diagnostic imaging. These modules are designed to empower healthcare professionals with the knowledge and skills needed to utilize advanced imaging technologies effectively. By offering these educational resources, Voxel 53 strives to bridge the gap in healthcare and ensure that high-quality diagnostic tools are more widely accessible.</p>
                     </div>
                 </div>
@@ -187,7 +169,7 @@
                         <div class="team-details">
                             <h3>Dr. Jacob Jaremko</h3>
                             <p class="team-title">Chief Medical Officer (CMO)</p>
-                            <p>Dr. Jacob Jaremko is a Professor of Radiology and Adjunct Professor of Computing Science at the University of Alberta, a practicing board-certified Pediatric and Musculoskeletal radiologist and partner at <a href="https://www.mic.ca/" target="_blank">Medical Imaging Consultants</a>, and co-founder of 3 startup companies including MEDO.ai.  He has a PhD in Biomedical Engineering.  He is a Canada <a href="https://cifar.ca/" target="_blank">CIFAR</a> AI Chair and Fellow of <a href="https://www.amii.ca/" target="_blank">AMII</a>, the Alberta Machine Intelligence Institute. His research has focused on developing objective imaging biomarkers of disease in ultrasound and MRI, and on implementing AI-augmented medical imaging diagnostic tools at the clinical point of care -- building the 21st-century stethoscope.</p>
+                            <p class="team-description">Dr. Jacob Jaremko is a Professor of Radiology and Adjunct Professor of Computing Science at the University of Alberta, a practicing board-certified Pediatric and Musculoskeletal radiologist and partner at <a href="https://www.mic.ca/" target="_blank" class="team-member-links">Medical Imaging Consultants</a>, and co-founder of 3 startup companies including MEDO.ai.  He has a PhD in Biomedical Engineering.  He is a Canada <a href="https://cifar.ca/" target="_blank" class="team-member-links">CIFAR</a> AI Chair and Fellow of <a href="https://www.amii.ca/" target="_blank" class="team-member-links">AMII</a>, the Alberta Machine Intelligence Institute. His research has focused on developing objective imaging biomarkers of disease in ultrasound and MRI, and on implementing AI-augmented medical imaging diagnostic tools at the clinical point of care -- building the 21st-century stethoscope.</p>
                         </div>
                     </div>
                 </div>
@@ -200,8 +182,8 @@
                             <h3>Dr. Abhilash Hareendranathan</h3>
                             <p class="team-title">Chief Technical Officer (CTO)</p>
                             <!-- <p>Dr. Abhilash Hareendranathan is an Assistant Professor in the <a href="https://www.ualberta.ca/radiology-and-diagnostic-imaging/index.html" target="_blank">Department of Radiology</a>  at the University of Alberta. His research focuses on artificial intelligence (AI), medical image analysis, and ultrasound imaging. With a diverse background, Dr. Hareendranathan has collaborated with research teams at <a href="https://research.sg.panasonic.com/" target="_blank">Panasonic R&D Center</a> in Singapore and <a href="https://www.curefab.com/" target="_blank">Curefab</a> in Germany. Prior to his academic role, he served as the R&D lead at <a href="http://MEDO.ai " target="_blank">MEDO.ai Inc.</a>, an AI start-up dedicated to developing innovative solutions for medical ultrasound. Throughout his career, Dr. Hareendranathan has pioneered AI approaches for automatic biomarker discovery, enhancing the speed and reliability of ultrasound assessments, and improving clinical workflows by empowering lightly trained users.</p> -->
-                            <p>
-                                Dr. Abhilash Hareendranathan is an Assistant Professor of Radiology at the University of Alberta, specializing in artificial intelligence (AI), medical image analysis, and ultrasound imaging. He has worked with research teams at <a href="https://research.sg.panasonic.com/" target="_blank">Panasonic R&D Center</a> and <a href="https://www.curefab.com/" target="_blank">Curefab</a> in Germany and was formerly the R&D lead at  <a href="http://MEDO.ai " target="_blank">MEDO.ai Inc.</a>, an AI start-up focused on medical ultrasound solutions. His research centers on developing AI-driven tools for automatic biomarker discovery, improving the speed and accuracy of ultrasound diagnostics, and enhancing clinical workflows by making AI-assisted imaging more accessible at the point of care.
+                            <p class="team-description">
+                                Dr. Abhilash Hareendranathan is an Assistant Professor of Radiology at the University of Alberta, specializing in artificial intelligence (AI), medical image analysis, and ultrasound imaging. He has worked with research teams at <a href="https://research.sg.panasonic.com/" target="_blank" class="team-member-links">Panasonic R&D Center</a> and <a href="https://www.curefab.com/" target="_blank" class="team-member-links">Curefab</a> in Germany and was formerly the R&D lead at  <a href="http://MEDO.ai " target="_blank" class="team-member-links">MEDO.ai Inc.</a>, an AI start-up focused on medical ultrasound solutions. His research centers on developing AI-driven tools for automatic biomarker discovery, improving the speed and accuracy of ultrasound diagnostics, and enhancing clinical workflows by making AI-assisted imaging more accessible at the point of care.
                             </p>
                         </div>
                     </div>
@@ -210,10 +192,12 @@
         </div> <!-- End of container -->
     </section>
 
+    <section id="intermediate-section2" class="intermediate-sections"></section>
+
     <!-- News Section -->
     <section id="news" class="section">
         <div class="container">
-            <h2>News</h2>
+            <h2 id="news-header">News</h2>
             <div class="news-slider">
                 <!-- News Cards -->
                 <div class="news-card active" data-index="0">
@@ -306,7 +290,7 @@
     <!-- Contact Us Section -->
     <!-- Contact Form Section -->
     <section id="contact" class="section">
-        <div class="container contact-flex">
+        <div class="contact-flex">
             <div class="contact-info">
                 <h2>Contact Us</h2>
                 <p>Email: <a href="mailto:nidus@ualberta.ca">nidus@ualberta.ca</a></p>
@@ -315,7 +299,7 @@
             </div>
             
             <div class = "google-form-container">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeF1QPrkU3TvGWxw4OX-M46lpJw9dcc-eXzRTiJqSINwYx0vw/viewform?embedded=true" width="640" height="450" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeF1QPrkU3TvGWxw4OX-M46lpJw9dcc-eXzRTiJqSINwYx0vw/viewform?embedded=true" id="google-form" width="640px" height="800px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
             <!-- <form action="/submit" method="POST" class="contact-form">
                 
@@ -336,11 +320,26 @@
         </div>
     </section>
 
+    <section id="intermediate-section3" class="intermediate-sections"></section>
+
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Voxel53. All rights reserved.</p>
+    <footer id="footer">
+        
+        <div id="footer-main-container">
+            <div id="footer-logo-container">
+                <a href="#top" target="_blank" id="voxel-footer-link">
+                    <img src="./images/logos/Voxel Horizontal White TP.png" alt="Voxel53 Logo" class="logo" id="footer-img">
+                </a>
+            </div>
+            <div id="rights-container">
+                <p id="rights">&copy; 2025 Voxel53. All rights reserved.</p>
+            </div>
+            <div id="footer-placeholder-container">
+                
+            </div>
         </div>
+        
+        
     </footer>
 </body>
 </html>

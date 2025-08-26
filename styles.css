@@ -1,15 +1,21 @@
+/* Fonts */
+@font-face {
+    font-family: 'content-font';
+    src: url('./fonts/Raleway/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Global Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'content-font', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -17,29 +23,42 @@ body {
 
 /* Header */
 header {
-    background-color: #2c3e50;
+    background-color: white;
     color: #fff;
     padding: 10px 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
 }
 
 /* Container inside header for proper alignment */
 header .container {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     align-items: center;
+    position: relative;
     width: 100%;
+    height: 45px;
 }
 
 /* Logo */
 header .logo {
     max-width: 150px;
+    transform: scale(1.8);
     height: auto;
+    position: absolute;
+    top: 25px;
+    left: 85px;
 }
 
 /* Navigation */
 header nav {
     display: flex;
+    position: relative;
+    right: 0px;
 }
 
 header nav ul {
@@ -51,18 +70,35 @@ header nav ul {
 
 header nav ul li {
     margin: 0 15px;
+    position: relative;
 }
 
 header nav ul li a {
-    color: #fff;
+    color: #2c3e50;
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
     transition: color 0.3s;
+    position: relative;
 }
 
-header nav ul li a:hover {
+header nav ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1abc9c;
     color: #1abc9c;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+header nav ul li a:hover::after {
+    background-color: #1abc9c;
+    color: #1abc9c;
+    transform: scaleX(1);
 }
 
 header h1 {
@@ -71,31 +107,155 @@ header h1 {
     text-align: center;
 }
 
+/* Hamburger Nav Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: #314354;
+    position: relative;
+    height: 45px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'content-font', sans-serif;
+}
+
+.nav-menu li {
+    margin-left: 1.5rem;
+}
+
+.nav-menu a {
+    color: #314354;
+    text-decoration: none;
+}
+
+/* Styles for the toggle button*/
+.nav-toggle {
+    display: none;
+    /* Hidden by default on large screens */
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* This is the media query for smaller screens.
+    The layout changes when the screen is 1116px or less.
+*/
+@media(max-width: 1116px) {
+    .nav-toggle {
+        display: block;
+        /* Show the toggle button on mobile */
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100vw;
+        position: absolute;
+        top: 70px;
+        /* Adjust this to sit below nav bar */
+        /* left: 0; */
+        right: 0px;
+        padding: 20px;
+        background-color: white;
+        display: none;
+        /* Hide the menu initially */
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        /* Show the menu when the 'active' class is toggled */
+    }
+
+    .nav-menu li {
+        margin: 0;
+        padding: 1rem 0;
+    }
+}
+
+
+
 /* Hero Section */
 .hero {
-    background: linear-gradient(to bottom, rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
     color: #fff;
     text-align: center;
-    padding: 100px 20px;
+    height: 450px;
+    transition: all 0.5 ease-in-out;
 }
 
-.hero h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #1e0c6d;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+@media (max-width: 800px){
+    .hero {
+        height: 500px
+    }
 }
 
-.hero p {
-    font-size: 1.25rem;
+@media (max-width: 600px){
+    .hero {
+        height: 750px;
+    }
+}
+
+
+.hero-links {
+    font-weight: bold;
+    color: white;
+}
+
+#welcome-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+#welcome-message {
     max-width: 700px;
     margin: 0 auto;
+    font-family: 'content-font', sans-serif;
+    font-size: 2.5rem;
+    position: relative;
+    left: 0px;
+    text-align: justify;
+}
+
+#message-container {
+    width: 700px;
+}
+
+#brief-about1{
+    font-size: 100%;
+    max-width: 700px;
+    top: 20px;
+    font-family: 'content-font', sans-serif;
+    position: relative;
+    left: 0px;
+    text-align: left;
+}
+
+#brief-about2 {
+    font-size: 1rem;
+    max-width: 700px;
+    top: 10px;
+    font-family: 'content-font', sans-serif;
+    position: relative;
+    left: 0px;
+    text-align: left;
 }
 
 /* Sections */
 .section {
     padding: 60px 20px;
     text-align: center;
+    font-family: 'content-font', sans-serif;
 }
 
 .section h2 {
@@ -106,46 +266,95 @@ header h1 {
 
 .section p {
     font-size: 1.1rem;
-    color: #555;
+    color: #2c3e50;
 }
 
-/* Services Section */
+.intermediate-sections{
+    width: 100%;
+    position: relative;
+    background-image: url("./images/Blue\ Voxel\ Gradient_Test.png");
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: auto auto;
+    height: 100px;
+}
+
+/* Services Section  CHECKED*/
+#services {
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
+}
+
+#services .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .service {
-    background: #fff;
+background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px 0;
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     align-items: center;
+    padding: 20px;
+    margin: 20px 0;
+        color: #2c3e50;
 }
 
 .service:hover {
     transform: translateY(-10px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
-.service .image-left {
-    margin-right: 20px;
-    flex-shrink: 0;
+.service-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: 'content-font';
 }
 
-.service img {
-    max-width: 150px;
+.service-content img {
+    max-width: 250px;
     height: auto;
-    /* border-radius: 20%; */
-}
 
+}
 .service h3 {
     font-size: 1.5rem;
-    color: #1abc9c;
     margin-bottom: 15px;
 }
 
 .service p {
-    color: #666;
     font-size: 1rem;
+    text-align: left;
+}
+
+
+
+.service-links {
+    color: black;
+    font-weight: bold;
+}
+
+/* About Voxel Subsection */
+
+#about{
+    height: 250px;
+}
+
+#about-voxel-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+    justify-content: center;
+    
+}
+
+#about-voxel-logo {
+    width: 200px;
+    height: 138px;
+    padding-top: 18px;
+    padding-right: 20px;
+
 }
 
 /* Team Section */
@@ -154,19 +363,34 @@ header h1 {
 /* Ensure container takes up full width and centers the content */
 /* Ensure container takes up full width and centers the content */
 /* Ensure container takes up full width and centers the content */
+#team {
+    padding: 80px 20px;
+    color: #eee6e6;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url("./images/Green\ Voxel\ Gradient_Test.png");
+    background-repeat: no-repeat;
+    background-position: 0 0%;
+    background-size: auto auto;
+    height: 900px;
+}
+
+
 #team .container {
     display: flex;
     flex-direction: column; /* Stack title and team members vertically */
     align-items: center; /* Center align the content */
     padding: 40px;
+    top: 20px;
+    flex-wrap: wrap;
 }
 
 /* Title Styling */
 #team h2 {
     font-size: 2.5rem;
-    font-weight: bold;
     text-align: center;
-    color: #333;
+    color: #2c3e50;
     margin-bottom: 30px; /* Space below the title */
 }
 
@@ -176,7 +400,9 @@ header h1 {
     flex-direction: row; /* Arrange items horizontally */
     justify-content: center; /* Center the content horizontally */
     gap: 40px; /* Add spacing between members */
+    align-items: flex-start;
     flex-wrap: wrap; /* Allow wrapping on small screens */
+    color: white;
 }
 
 /* Team Member Styling */
@@ -185,9 +411,9 @@ header h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 500px; /* Larger square size */
-    height: 700px; /* Make it a perfect square */
-    background-color: #fff;
+    width: 500px; 
+    height: 700px; 
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -200,41 +426,63 @@ header h1 {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+.team-member-links {
+    font-weight: bold;
+    color:white;
+}
+
+.team-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* Team Member Image */
-.team-image {
-    width: 220px; /* Size of the image */
-    height: 220px; /* Size of the image */
-    border-radius: 40%; /* Make the image circular */
-    object-fit: cover; /* Ensure image covers the area */
-    margin-bottom: 20px; /* Space between image and text */
+.team-content img {
+    width: 150px;
+    height: 230px;
+    object-fit: cover;
+    top: 0px;
+    border-radius: 10px;
 }
 
 /* Team Member Text Styling */
 .team-details {
     text-align: center;
+    color: white;
+    height: 400px;
+    overflow: visible;
 }
 
 .team-details h3 {
     font-size: 1.4rem;
-    color: #2c3e50;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
 .team-details p {
     font-size: 1rem;
-    color: #555;
+    color: white;
 }
 
-/* Team Member Title (Role) Styling */
-.team-title {
-    font-size: 1.1rem;          /* Slightly smaller font size than the name */
-    color: #7f8c8d;             /* Lighter gray color for the title */
-    font-weight: 600;           /* Semi-bold font weight */
-    margin-top: 5px;            /* Add some space between the name and title */
+.team-description {
+    text-align: left;
+    color: white;
 }
+
+@media (max-width: 1160px){
+    #team{
+        height: 1600px;
+    }
+}
+
 
 /* Responsive Design: Adjust layout for smaller screens */
 @media (max-width: 768px) {
+    #team {
+        height: 2000px;
+    }
+    
     .team-member {
         width: 300px;  /* Adjust width for medium screens */
         height: 300px; /* Keep it square */
@@ -247,6 +495,10 @@ header h1 {
 }
 
 @media (max-width: 480px) {
+    #team {
+        height: 2200px;
+    }
+    
     .team-member {
         width: 250px;  /* Adjust width for small screens */
         height: 250px; /* Keep it square */
@@ -255,54 +507,113 @@ header h1 {
 
 
 /* News Section */
+
+#news {
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .news-card {
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    display: none;
+    align-items: center;
+    position: relative;
+
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    flex-shrink: 0;
+
     padding: 20px;
-    margin: 20px 0;
-    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 20px 20px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+    
+        
+}
+
+.news-card.active {
+    display: block;
+}
+
+.news-card .news-card-content {
     display: flex;
     align-items: center;
+    padding: 5px;
+    text-align: center;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+.news-card img {
+    max-width: 700px;
+    height: 325px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 20px 20px;
+}
+
+
+.news-card p {
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.news-text h3 a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effects */
 
 .news-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.news-card .news-card-content {
-    display: flex;
-    align-items: center;
-}
-
-.news-card img {
-    max-width: 700px;
-    margin-right: 20px;
-    height: 325px;
-}
-
-.news-card h3 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
-.news-card a {
-    color: #1a5bbc;
-    text-decoration: none;
-}
-
 .news-card a:hover {
     text-decoration: underline;
 }
 
-.news-card p {
-    color: #666;
-    font-size: 1rem;
+.news-text h3 a:hover {
+    color: #1abc9c;
 }
 
 /* Contact Form */
+#contact {
+    position: relative;
+    overflow: hidden;
+    background-image: url("./images/Green\ Voxel\ Gradient_Test.png");
+    background-repeat: no-repeat;
+    background-position: 0 0%;
+    background-size: auto auto;
+    height: 700px;
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.contact-form:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 .contact-flex {
     display: flex;
     justify-content: space-between;
@@ -314,11 +625,9 @@ header h1 {
     margin-right: 5%;
 }
 
-.contact-form {
-    width: 45%;
-}
 
-form {
+/* THIS IS A CUSTOM FORM THAT IS NOT IMPLEMENTED */
+/* form {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -352,104 +661,10 @@ form button {
 
 form button:hover {
     background-color: #16a085;
-}
-
-/* Footer */
-footer {
-    background-color: #2c3e50;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 0;
-    font-size: 1rem;
-}
-
-/* Services Section */
-.service {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px 0;
-}
-
-.service-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.service-content img {
-    max-width: 250px;
-    height: auto;
-
-}
-
-.service h3 {
-    font-size: 1.5rem;
-    color: #1abc9c;
-    margin-bottom: 15px;
-}
-
-.service p {
-    color: #666;
-    font-size: 1rem;
-}
-
-/* Team Section */
-.team-member {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px 0;
-}
-
-.team-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.team-content img {
-    max-width: 150px;
-    height: auto;
-}
-
-.team-member h3 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-}
-
-.team-member p {
-    color: #666;
-    font-size: 1rem;
-}
-
-/* Contact Form */
-.contact-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-/* Styling for form card */
-.contact-form {
-    width: 100%;
-    max-width: 600px;
-    padding: 30px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
-    box-sizing: border-box;
-}
+} */
 
 /* Form fields (input, textarea, button) */
-form input,
+/* form input,
 form textarea,
 form button {
     width: 100%;
@@ -462,18 +677,18 @@ form button {
     color: #333;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
-}
+} */
 
 /* Focus effect for inputs */
-form input:focus,
+/* form input:focus,
 form textarea:focus {
     border-color: #1abc9c;
     outline: none;
     box-shadow: 0 0 8px rgba(26, 188, 156, 0.4);
-}
+} */
 
 /* Button style */
-form button {
+/* form button {
     background-color: #1abc9c;
     color: white;
     font-weight: bold;
@@ -482,27 +697,92 @@ form button {
     transition: background-color 0.3s ease, transform 0.2s ease;
     padding: 15px;
     border-radius: 8px;
-}
+} */
 
 /* Button hover effect */
-form button:hover {
+/* form button:hover {
     background-color: #16a085;
     transform: scale(1.05);
-}
-
-/* Card hover effect (for the form container) */
-.contact-form:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
+} */
 
 /* Label styling */
-form label {
+/* form label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     color: #333;
     font-size: 1rem;
+} */
+
+/* Form label styling */
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left;
 }
+
+/* Input and Textarea styling */
+form input,
+form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Placeholder text */
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Make the textarea bigger */
+form textarea {
+    height: 150px;
+}
+
+/* Button style */
+/* form button {
+    background-color: #16a085;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 12px 0;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+} */
+
+/* Button hover effect */
+/* form button:hover {
+    background-color: #d4c6e0;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+} */
+
+/* Footer */
+footer {
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+
 
 /* Responsive adjustment for mobile */
 @media (max-width: 768px) {
@@ -517,84 +797,26 @@ form label {
     }
 }
 
-/* Contact Form */
-.contact-form {
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Form label styling */
-form label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #333;
-    text-align: left;
-}
-
-/* Input and Textarea styling */
-form input, form textarea {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 12px;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-/* Placeholder text */
-form input::placeholder, form textarea::placeholder {
-    color: #aaa;
-    font-style: italic;
-}
-
-/* Make the textarea bigger */
-form textarea {
-    height: 150px;
-}
-
-/* Button style */
-form button {
-    background-color: #16a085;
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    padding: 12px 0;
-    border-radius: 25px;
-    font-size: 1.1rem;
-    text-align: center;
-    width: 50%;
-    margin: 0 auto;
-}
-
-/* Button hover effect */
-form button:hover {
-    background-color: #d4c6e0;
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-
 /* About Us Section */
 .about-us {
-    /* background: linear-gradient(135deg, #d0cfd4 90%,  #eaeaee 10%); Gradient background */
-    background-color: #e3daec;
     padding: 100px 20px;
-    color: #eee6e6;
+    /* color: #eee6e6; */
     text-align: center;
     position: relative;
     overflow: hidden;
+    background-image: url("./images/Green\ Voxel\ Gradient_Test.png");
+    background-repeat: no-repeat;
+    background-position: 0 0%;
+    background-size: auto auto;
+    height: 300px;
 }
 
 /* Flex container for alignment */
-.about-flex {
+#about-main-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 30px;
     max-width: 1200px;
@@ -603,47 +825,10 @@ form button:hover {
     z-index: 1;
 }
 
-/* About text area */
-.about-text {
-    flex: 1;
-    max-width: 600px;
-    position: relative;
-    z-index: 1;
-}
-
-/* Title with subtle shadow and effect */
-.about-title {
-    font-size: 3.5rem;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    position: relative;
-    z-index: 1;
-}
-
-.about-title::after {
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 4px;
-    background-color: #1abc9c;
-    bottom: -10px;
-    left: 25%;
-    transition: width 0.3s ease;
-}
-
-.about-title:hover::after {
-    width: 100%;
-    left: 0;
-}
-
 /* Description text with improved line height and softer font weight */
 .about-description {
     font-size: 1.2rem;
-    color: #555;
+    color: rgb(18, 24, 46);
     line-height: 1.8;
     max-width: 800px;
     margin: 0 auto;
@@ -659,6 +844,12 @@ form button:hover {
     max-width: 400px;
     position: relative;
     z-index: 1;
+}
+
+#nidus-header {
+    font-family: 'content-font', san-serif;
+    font-size: 200%;
+    font-weight: bold;
 }
 
 .placeholder-image {
@@ -693,80 +884,92 @@ form button:hover {
     left: 50%;
     width: 120%;
     height: 120%;
-    background: radial-gradient(circle, rgba(246, 244, 248, 0.877), rgba(242, 241, 243, 0.877));
-    border-radius: 50%;
+    /* background: linear-gradient(to bottom, rgba(246, 244, 248, 0.0), rgba(242, 241, 243, 1.0)); */
+    /* border-radius: 50%; */
     border-color: #764ba2;
     transform: translate(-50%, -50%);
     z-index: 0;
 }
+/* 
+@media (max-width: 890px){
+    #about {
+        height: 400px;
+    }
+} */
+
+
+@media (max-width: 890px){
+    #about {
+        height: 400px;
+    }
+
+    #about-voxel-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #nidus-logo-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+    }
+    
+}
+
+@media (max-width: 840px) {
+    #about {
+        height: 600px;
+    }
+
+    #about-voxel-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #nidus-logo-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+    }
+
+}
+
+@media (max-width: 800px){
+    #about {
+        height: 620px;
+    }
+}
 
 /* Mobile-friendly adjustments */
 @media (max-width: 768px) {
-    .about-flex {
+    
+    #about {
+        height: 650px;
+    }
+    
+    #about-main-container {
         flex-direction: column;
-        text-align: left;
+        justify-content: center;
+    }
+    #about-voxel-container {
+        flex-direction:  column;
+        justify-content: center;
+    }
+    #nidus-logo-container {
+        flex-direction:  column;
+        justify-content: center;
     }
 
-    .about-image {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .about-description {
-        font-size: 1.1rem;
-    }
+    
 }
 
 
 /* Hero Section */
 .hero {
-    /*background: linear-gradient(to bottom, rgba(109, 154, 214, 0.8), rgba(155, 89, 182, 0.8)), url('hero-bg.jpg') no-repeat center center/cover;*/
     color: #fff;
-    background: linear-gradient(to right, #667eea, #764ba2);
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));    
     text-align: center;
-    padding: 20px 20px;
-}
-
-/* Title Styles */
-.welcome-title {
-    font-size: 3.5rem;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    position: relative;
-}
-
-/* Underline effect for the title */
-.welcome-title::after {
-    content: "";
-    position: absolute;
-    width: 50%;
-    height: 4px;
-    background-color: #e4d5e7;
-    bottom: -10px;
-    left: 25%;
-    transition: width 0.3s ease;
-}
-
-.welcome-title:hover::after {
-    width: 100%;
-    left: 0;
-}
-
-/* Description Styles */
-.welcome-description {
-    font-size: 1.25rem;
-    color: #fff;
-    margin-top: 20px;
-    line-height: 1.8;
-}
-
-/* Hover effect for description */
-.welcome-description:hover {
-    color: #f1c40f; /* Slight yellow accent on hover */
-    transition: color 0.3s ease;
+    width: 100%
 }
 
 /* Image Styles */
@@ -776,101 +979,25 @@ form button:hover {
     height: auto;
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .welcome-title {
-        font-size: 2.5rem;
-    }
-
-    .welcome-description {
-        font-size: 1.1rem;
-    }
-}
-
 /* Second paragraph in About Us */
-.about-description.standout {
+#standout {
     font-size: 1.3rem; /* Slightly larger font */
     font-weight: bold; /* Bold font to draw attention */
-    color: #3c3844; /* A standout color */
-    background-color: rgba(150, 30, 197, 0.1); /* Soft background color */
+    color: white;
+    font-family: 'content-font', sans-serif;
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
     padding: 15px; /* Padding to give some space around the text */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow to make it pop */
-    margin-top: 20px; /* Space from previous content */
-}
-
-/* News Section Styles */
-.news-slider {
-    display: flex;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-.news-card {
-    display: none; /* Hide cards by default */
-    flex-shrink: 0;
-    width: 100%;  /* Full width for better responsiveness */
-    max-width: 800px;  /* Adjusted max-width for large screens */
-    height: 500px;  /* Increased height for better balance */
-    margin: 0 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: relative;
-    transition: transform 0.5s ease;
-}
-
-.news-card.active {
-    display: block; /* Show active card */
-}
-
-.news-card-content {
-    padding: 5px;
-    text-align: center;
-    height: 100%; /* Full height for better content distribution */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.news-image {
-    width: 100%;
-    height: 250px; /* Increased image height */
-    object-fit: cover; /* Ensures the image doesn't get distorted */
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.news-text h3 {
-    font-size: 24px;  /* Larger title size */
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.news-text h3 a {
-    color: #1a5bbc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.news-text h3 a:hover {
-    color: #1abc9c;  /* Hover effect on title link */
-}
-
-.news-text p {
-    font-size: 18px;  /* Increased size for description */
-    color: #777;
+    max-width: 600px;
+    bottom: 20px;
 }
 
 /* Style for the dots inside the card */
 /* Style for the dots inside the card */
 .dots-container {
     position: absolute;
-    bottom: 20px;  /* Adjusted space from the bottom */
+    bottom: 15px;  /* Adjusted space from the bottom */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -880,16 +1007,17 @@ form button:hover {
 }
 
 .dot {
-    height: 14px;
-    width: 14px;
+    height: 10px;
+    width: 10px;
     background-color: #bbb;
     border-radius: 50%;
     cursor: pointer;
+    margin: 0 5px;
     transition: background-color 0.3s ease;
 }
 
 .dot.active {
-    background-color: #1abc9c;  /* Active dot color */
+    background-color: #8f44d4;  /* Active dot color */
 }
 
 /* Hover effect for the dots */
@@ -898,18 +1026,6 @@ form button:hover {
 }
 
 
-/* Hover effects */
-.news-card:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Hover effect */
-}
-
-.news-card:hover .news-text h3 {
-    color: #1abc9c;  /* Hover effect on title */
-}
-
-.news-card:hover .news-text p {
-    color: #555;  /* Hover effect on description */
-}
 
 /* Make the cards more responsive on smaller screens */
 @media (max-width: 768px) {
@@ -926,292 +1042,54 @@ form button:hover {
     }
 }
 
-/* Style for the dots inside the card */
-.dots-container {
-    position: absolute;
-    bottom: 20px;  /* Adjusted space from the bottom */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    z-index: 10;  /* Ensure dots are above card content */
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: gray;
-    margin: 0 5px;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active {
-    background-color: #8f44d4; /* Color for active dot */
-}
-
-/* Hover effect for the dots */
-.dot:hover {
-    background-color: #16a085;  /* Hover color for dots */
-}
-
-/* News card content */
-.news-card {
-    display: none;  /* Hide all news cards initially */
-}
-
-.news-card.active {
-    display: block;  /* Show active news card */
-}
-
 /* Add styles for Nidus logo container */
-.nidus-logo-container {
-    text-align: center;
-    margin-top: 40px; /* Adjust spacing above the logo */
+#nidus-logo-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 70px;
+    align-items: center;
 }
 
-/* Style the Nidus logo */
-.nidus-logo {
-    max-width: 100px; /* Adjust logo size */
-    height: auto;
-    transition: transform 0.3s ease;
+#nidus-logo-link {
+    max-height: 125px;
+    width: auto;
+    top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#nidus-link {
+    top: 30px;
 }
 
 /* Hover effect for the logo */
-.nidus-logo:hover {
+#nidus-logo-link:hover {
     transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
-/* Optional: Add a link style for the Nidus logo (if needed) */
-.nidus-logo-link {
-    text-decoration: none; /* Remove underline */
-}
+
 
 /* General Styles for the Gallery */
 /* General Styles for the Gallery */
-.about-image-gallery {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 100px;
-}
-
-.slideshow-container {
-    position: relative;
-    width: 600px;  /* Increased width by 20% */
-    height: 360px; /* Increased height by 20% */
-    margin: auto;
-    overflow: hidden;  /* Ensures images don’t overflow container */
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding-top: 5%; */
-}
-
-/* Make sure each slide takes up the full size of the container */
-.mySlides fade{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    /* display:inline-block; */
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-/* Gallery Images - fixed size */
-.gallery-image {
-
-    object-fit: contain;  /* Ensure the entire image is visible */
-    aspect-ratio: 1.5;
-    object-position: center;  /* Center the image in case of empty space */
-    max-width: 100%;  /* Prevent image from expanding beyond the container width */
-    max-height: 100%;  /* Prevent image from expanding beyond the container height */
-}
-
-/* Navigation arrows */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    padding: 16px;
-    margin-top: -22px;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.3s ease;
-    user-select: none;
-    background-color: rgba(107, 192, 226, 0.836);
-    border-radius: 50%;
-    z-index: 1;
-}
-
-/* Positioning of arrows */
-.prev {
-    left: 10px;
-    transform: translateY(-50%); /* Center the arrow vertically */
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.next {
-    right: 10px;
-    transform: translateY(-50%); /* Center the arrow vertically */
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-/* Hover effect for arrows */
-.prev:hover, .next:hover {
-    background-color: rgba(222, 236, 18, 0.952);
-    transform: scale(1.1); /* Slightly enlarge the arrow on hover */
-}
-
-/* Responsive Breakpoints */
-
-/* For smaller screens (Mobile) */
-@media screen and (max-width: 600px) {
-    .slideshow-container {
-        width: 108%;  /* Increase width by 20% */
-        height: 240px;  /* Increase height by 20% */
-    }
-
-    .gallery-image {
-        width: 100%;  /* Ensure images fit within the container */
-        height: 100%;  /* Ensure images fill container height */
-        object-fit: contain;  /* Keep the entire image visible */
-    }
-
-    .prev, .next {
-        font-size: 14px;  /* Smaller arrows for mobile */
-        padding: 10px;
-    }
-}
 
 /* For medium screens (Tablets) */
-@media screen and (max-width: 900px) {
-    .slideshow-container {
-        width: 102% ;  /* Increase width by 20% */
-        height: 300px; /* Increase height by 20% */
+@media (max-width: 753px) {
+    #footer-logo-container {
+        display: none;
     }
+}
 
-    .gallery-image {
-        width: 100%;  /* Ensure images fit within the container */
-        height: 100%;  /* Ensure images fill container height */
-        object-fit: contain;  /* Keep the entire image visible */
-    }
-
+/* @media screen and (max-width: 900px) {
     .prev, .next {
-        font-size: 16px;  /* Medium arrow size for tablets */
+        font-size: 16px;  
     }
-}
-
-/* For larger screens (Desktop and bigger) */
-@media screen and (min-width: 1200px) {
-    .slideshow-container {
-        width: 600px;  /* Increased width by 20% */
-        height: 360px; /* Increased height by 20% */
-    }
-}
-
-/* Container for Team Members */
-#team .container {
-    display: flex;
-    flex-direction: column; /* Stack title and team members vertically */
-    align-items: center; /* Center align the content */
-    padding: 40px;
-}
-
-/* Title Styling */
-#team h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px; /* Space below the title */
-}
-
-/* Team Member Grid Container */
-.team-grid {
-    display: flex;
-    flex-direction: row; /* Arrange items horizontally */
-    justify-content: center; /* Center the content horizontally */
-    gap: 40px; /* Add spacing between members */
-    flex-wrap: wrap; /* Allow wrapping on small screens */
-}
-
-/* Team Member Styling */
-.team-member {
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center;
-    justify-content: center;
-    width: 500px; /* Larger size */
-    height: auto; /* Let the height adjust based on content */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin-bottom: 20px; /* Space below each team member */
-}
-
-/* Hover Effect */
-.team-member:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Team Member Image */
-.team-image {
-    width: 220px; /* Size of the image */
-    height: 220px; /* Size of the image */
-    border-radius: 25%; /* Make the image circular */
-    object-fit: cover; /* Ensure image covers the area */
-    margin-bottom: 10px; /* Space between image and text */
-    margin-top: 10px;
-}
-
-/* Team Member Text Styling */
-.team-details {
-    text-align: justify;
-}
-
-/* Name Styling */
-.team-details h3 {
-    font-size: 1.5rem;
-    color: #2c3e50;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-/* Title (Role) Styling */
-.team-title {
-    font-size: 1.1rem;
-    color: #7f8c8d;
-    font-weight: 600;
-    /* margin-top: 5px; */
-    text-align: center;
-}
-
-/* Description Styling */
-.team-details p {
-    font-size: 1rem;
-    color: #555;
-}
+} */
 
 /* Responsive Design: Adjust layout for smaller screens */
 @media (max-width: 768px) {
     .team-member {
         width: 300px;  /* Adjust width for medium screens */
         padding: 15px;  /* Adjust padding for medium screens */
-    }
-
-    .team-grid {
-        flex-direction: column; /* Stack the team members vertically on smaller screens */
-        align-items: center; /* Center align vertically */
     }
 }
 
@@ -1225,23 +1103,6 @@ form button:hover {
         width: 200px; /* Smaller image size for small screens */
         height: 200px; /* Smaller image size for small screens */
     }
-}
-
-.team-content {
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    align-items: center;
-    gap: 10px;
-}
-
-.team-member h3 {
-    font-size: 1.5rem;
-    color: #1abc9c;
-}
-
-.team-member p {
-    color: #666;
-    font-size: 1rem;
 }
 
 .container {
@@ -1285,37 +1146,6 @@ form button:hover {
 
     .news-text p {
         font-size: 14px;  /* Adjust description font size */
-    }
-}
-
-/* For smaller screens */
-@media screen and (max-width: 600px) {
-    .slideshow-container {
-        width: 100%;  /* Ensure the slideshow takes the full width */
-        height: 240px;  /* Adjust height for smaller screens */
-    }
-
-    .gallery-image {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;  /* Keep image fully visible */
-    }
-
-    .prev, .next {
-        font-size: 14px;  /* Smaller arrow size */
-        padding: 10px;
-    }
-}
-
-/* For tablets */
-@media screen and (max-width: 900px) {
-    .slideshow-container {
-        width: 100%;  /* Ensure it takes the full width */
-        height: 300px; /* Adjust height for tablets */
-    }
-
-    .prev, .next {
-        font-size: 16px;  /* Adjust arrow size */
     }
 }
 
@@ -1368,22 +1198,6 @@ form button:hover {
     }
 }
 
-/* Adjust styles for smaller screens */
-@media (max-width: 768px) {
-    .about-description.standout {
-        font-size: 1.1rem; /* Slightly smaller text for mobile */
-        padding: 10px; /* Adjust padding */
-    }
-}
-
-/* For mobile */
-@media (max-width: 480px) {
-    .about-description.standout {
-        font-size: 1rem;  /* Even smaller font size for mobile */
-        padding: 8px; /* Smaller padding */
-    }
-}
-
 /* Container for Google Form */
 .google-form-container {
     position: relative;
@@ -1426,7 +1240,7 @@ form button:hover {
 
     /* Stack the service cards vertically */
     .service {
-        width: 100%; /* Full width for each service */
+        /* width: 100%; Full width for each service */
         margin-bottom: 20px; /* Add space between the service cards */
     }
 
@@ -1449,6 +1263,7 @@ form button:hover {
     .service-content h3 {
         font-size: 1.6rem; /* Adjust heading size */
         margin-bottom: 10px; /* Add space below the heading */
+        font-family: 'content-font';
     }
 
     .service-content p {
@@ -1473,6 +1288,7 @@ form button:hover {
 @media (max-width: 480px) {
     /* Make the headings slightly smaller for very small screens */
     .service-content h3 {
+        font-family: 'content-font';
         font-size: 1.4rem;
     }
 
@@ -1519,13 +1335,33 @@ form button:hover {
     display: none;  /* Initially hidden */
 }
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;  /* Show menu toggle on small screens */
-        cursor: pointer;
-    }
+#footer {
+    height: 40px;
+    width: 100%;
 }
 
+#footer-placeholder-container {
+    width: 150px;
+    height: 40px;
+}
 
+#footer-main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    top: 20px;
+}
 
+#rights {
+    color: white;
+    font-family: 'content-font', sans-serif;
+    font-weight: bold;
+}
 
+#footer-img {
+    max-width: 150px;
+    transform: scale(1.8);
+    height: auto;
+    left: 100px;
+    top: 20px
+}

@@ -1,0 +1,1213 @@
+/* Fonts */
+@font-face {
+    font-family: 'content-font';
+    src: url('./fonts/Raleway/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* -------------------------------- Base Styles ------------------------------ */
+body {
+    font-family: 'content-font', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* padding: 20px; */
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'content-font', sans-serif;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #2c3e50;
+}
+
+/* DESKTOP STYLES */
+
+
+/* ----------------------------- Transition Sections ----------------------------- */
+.intermediate-sections {
+    width: 100%;
+    position: relative;
+    background-image: url("./images/Blue\ Voxel\ Gradient_Test.png");
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: auto auto;
+    height: 100px;
+}
+
+/* ----------------------------- Header Section ----------------------------- */
+header {
+    background-color: white;
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+/* Container inside header for proper alignment */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 60px;
+}
+
+/* Logo */
+header .logo {
+    max-width: 150px;
+    transform: scale(1.8);
+    height: auto;
+    position: absolute;
+    top: 15px;
+    left: 85px;
+}
+
+/* Navigation Styles */
+header nav {
+    display: flex;
+    position: relative;
+    right: 0px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+header nav ul li a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1abc9c;
+    color: #1abc9c;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+}
+
+header nav ul li a:hover::after {
+    background-color: #1abc9c;
+    color: #1abc9c;
+    transform: scaleX(1);
+}
+
+/* Hamburger Menu */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: #314354;
+    position: relative;
+    height: 45px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'content-font', sans-serif;
+}
+
+.nav-menu li {
+    margin-left: 1.5rem;
+}
+
+.nav-menu a {
+    color: #314354;
+    text-decoration: none;
+}
+
+/* Styles for the toggle button*/
+.nav-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 10px;
+}
+
+@media screen and (max-width: 1116px) {
+    .nav-toggle {
+        display: block;
+        /* Show the toggle button on mobile */
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100vw;
+        position: absolute;
+        top: 70px;
+        right: -50px;
+        padding: 20px;
+        background-color: white;
+        display: none;
+        /* Hide the menu initially */
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        /* Show the menu when the 'active' class is toggled */
+    }
+
+    .nav-menu li {
+        margin: 0;
+        padding: 1rem 0;
+    }
+}
+
+
+/* ------------------------------ Home Section ------------------------------ */
+.hero {
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
+    color: #fff;
+    text-align: center;
+    height: 470px;
+    width: 100%;
+    transition: all 0.5 ease-in-out;
+    align-items: center;
+}
+
+.hero-links {
+    font-weight: bold;
+    color: white;
+}
+
+#welcome-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* flex-grow: 1; */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#welcome-message {
+    max-width: 700px;
+    /* margin: 0 auto; */
+    font-family: 'content-font', sans-serif;
+    font-size: 2.5rem;
+    position: relative;
+    width: 100%;
+    left: 0px;
+    text-align: left;
+    padding-bottom: 0px;
+}
+
+.brief-abouts {
+    font-size: 1rem;
+    max-width: 700px;
+    /* top: 10px; */
+    width: 100%;
+    font-family: 'content-font', sans-serif;
+    position: relative;
+    /* left: 100px; */
+    text-align: left;
+
+}
+
+.brief-abouts #brief-about1 {
+    top: 20px;
+}
+
+.brief-abouts #brief-about2 {
+    top: 10px;
+}
+
+/* ------------------------------ About Section ------------------------------ */
+#about {
+    height: 250px;
+}
+
+.about-us {
+    padding: 100px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url("./images/Green\ Voxel\ Gradient_Test.png");
+    background-repeat: no-repeat;
+    background-position: 0 0%;
+    background-size: auto auto;
+    height: 300px;
+}
+
+#about-main-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Voxel53 About Section */
+#about-voxel-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+#about-voxel-logo {
+    width: 200px;
+    height: 138px;
+    padding-top: 18px;
+    padding-right: 20px;
+
+}
+
+#standout {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    font-family: 'content-font', sans-serif;
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    bottom: 20px;
+}
+
+/* NIDUS Redirect Section */
+
+#nidus-header {
+    font-family: 'content-font', san-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#nidus-logo-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 70px;
+    align-items: center;
+}
+
+#nidus-link {
+    top: 30px;
+}
+
+#nidus-logo-link {
+    max-height: 125px;
+    width: auto;
+    top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#nidus-logo-link:hover {
+    transform: scale(1.1);
+    /* Slight zoom effect on hover */
+}
+
+/* ------------------------------ Services Section ------------------------------ */
+#services {
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
+}
+
+#services .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 20px 20px;
+    margin: 20px 0px;
+    color: #2c3e50;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.service:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-family: 'content-font';
+}
+
+.service-content img {
+    max-width: 250px;
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.service p {
+    font-size: 1rem;
+    text-align: left;
+}
+
+.service-links {
+    color: black;
+    font-weight: bold;
+}
+
+/* ------------------------------ Team Section ------------------------------ */
+
+/* Section Styles */
+#team {
+    padding: 80px;
+    color: #eee6e6;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url("./images/Green\ Voxel\ Gradient_Test.png");
+    background-repeat: no-repeat;
+    background-position: 0 0%;
+    background-size: auto auto;
+    height: 900px;
+}
+
+
+#team .container {
+    display: flex;
+    flex-direction: column;
+    /* Stack title and team members vertically */
+    align-items: center;
+    /* Center align the content */
+    top: 20px;
+    /* flex-wrap: wrap; */
+}
+
+/* Title Styling */
+#team h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Team Member Grid Container */
+.team-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    color: white;
+}
+
+/* Team Member Styling */
+.team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 700px;
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.team-member-links {
+    font-weight: bold;
+    color: white;
+}
+
+.team-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Team Member Image */
+.team-content img {
+    width: 150px;
+    height: 230px;
+    object-fit: cover;
+    top: 0px;
+    border-radius: 10px;
+}
+
+/* Team Member Text Styling */
+.team-details {
+    text-align: center;
+    color: white;
+    height: 400px;
+    overflow: visible;
+}
+
+.team-details h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.team-details p {
+    font-size: 1rem;
+    color: white;
+}
+
+.team-description {
+    text-align: left;
+    color: white;
+}
+
+/* ------------------------------ News Section ------------------------------ */
+#news-header {
+    color: white;
+    padding-bottom: 20px;
+}
+
+#news {
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* padding-top: 0px; */
+}
+
+#news .container {
+    top: 15px;
+}
+
+.news-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-card {
+    background: #fff;
+    display: none;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    flex-shrink: 0;
+    padding: 20px;
+    margin: 20px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.news-card.active {
+    display: block;
+}
+
+.news-card .news-card-content {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    text-align: center;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.news-card img {
+    max-width: 700px;
+    height: 325px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 20px 20px;
+}
+
+
+.news-card p {
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.news-text h3 a {
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effects */
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.news-card a:hover {
+    text-decoration: underline;
+}
+
+.news-text h3 a:hover {
+    color: #1abc9c;
+}
+
+/* News Cards Dots */
+.dots-container {
+    position: absolute;
+    bottom: 15px;
+    /* Adjusted space from the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    z-index: 10;
+    /* Ensure dots are above card content */
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #8f44d4;
+    /* Active dot color */
+}
+
+/* Hover effect for the dots */
+.dot:hover {
+    background-color: #1abc9c;
+    /* Hover color for dots */
+}
+
+/* ------------------------------ Contact Section ------------------------------ */
+#contact {
+    position: relative;
+    overflow: hidden;
+    background-image: url("./images/Green\ Voxel\ Gradient_Test.png");
+    background-repeat: no-repeat;
+    background-position: 0 0%;
+    background-size: auto auto;
+    height: 785px;
+    padding-bottom: 0px;
+}
+
+.contact-form:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.contact-flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding: 0 80px;
+}
+
+.contact-info {
+    width: 45%;
+    margin-right: 5%;
+}
+
+.google-form-container {
+    height: 100%;
+}
+
+/* ------------------------------ Footer Section ------------------------------ */
+footer {
+    background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+    height: 40px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+#footer-placeholder-container {
+    width: 150px;
+    height: 40px;
+}
+
+#footer-main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    top: 20px;
+}
+
+#footer-img {
+    max-width: 150px;
+    transform: scale(1.8);
+    height: auto;
+    left: 100px;
+    top: 20px
+}
+
+#rights {
+    color: white;
+    font-family: 'content-font', sans-serif;
+    font-weight: bold;
+}
+
+/* ------------------------------ Responsive Media Tags ------------------------------ */
+
+/* 1160px Screen Width */
+@media screen and (max-width: 1160px) {
+    #team {
+        min-height: 1620px;
+    }
+    
+    .team-grid {
+        flex-direction: column;
+    }
+}
+
+/* 900px Screen Width */
+@media screen and (max-width: 900px){
+    h1,h2,h3 {
+        font-size: 1.4rem;
+        /* Adjust header sizes for tablets */
+    }
+
+    p {
+        font-size: 1rem;
+        /* Adjust paragraph size for readability */
+    }
+
+        .google-form-container {
+            padding-bottom: 100%;
+            /* Adjusted aspect ratio for medium-sized screens */
+        }
+}
+
+/* 890px Screen Width */
+@media screen and (max-width: 890px){
+    
+    /* About Section */
+    #about {
+        min-height: 550px;
+    }
+
+    #about-voxel-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #nidus-logo-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+    }
+    
+    /* Team Section */
+    .team-grid {
+        flex-direction: column;
+    }
+
+    /* Contact Section */
+    #contact {
+        min-height: 1000px;
+    }
+    
+    .contact-flex {
+        flex-direction: column;
+        position: relative;
+        top: 370px;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+}
+
+/* 840px Screen Width */
+@media screen and (max-width: 840px){
+    #about {
+        min-height: 600px;
+    }
+
+    #about-voxel-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #nidus-logo-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+    }
+}
+
+/* 800px Screen Width */
+@media screen and (max-width: 800px) {
+    #about {
+        min-height: 620px;
+    }
+}
+
+/* 768px Screen Width */
+@media screen and (max-width: 768px) {
+
+    /* Header Section */
+    header {
+        flex-direction: column;
+        align-items: center;
+        /* Center align for mobile */
+        text-align: center;
+        /* Align text center */
+    }
+
+    .logo {
+        font-size: 2rem;
+        /* Adjust font size of the logo */
+        margin-bottom: 10px;
+        /* Provide spacing below the logo */
+    }
+
+    nav ul {
+        flex-direction: column;
+        /* Stack the navigation links vertically */
+        align-items: center;
+        /* Center-align the items */
+        padding-left: 0;
+        /* Remove padding */
+    }
+
+    nav ul li {
+        margin-bottom: 15px;
+        /* Add space between each navigation link */
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+        /* Adjust font size for navigation links */
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Display menu toggle (hamburger) for mobile */
+    }
+
+    /* About Section */
+    #about {
+        min-height: 650px;
+    }
+
+    #about-main-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #about-voxel-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #nidus-logo-container {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Services Section */
+    #services .container {
+        /* padding: 20px; */
+        /* Add padding around the section */
+    }
+
+    /* Stack the service cards vertically */
+    .service {
+        /* width: 100%; Full width for each service */
+        margin-bottom: 20px;
+        /* Add space between the service cards */
+    }
+
+    /* Adjust service content layout */
+    .service-content {
+        display: flex;
+        flex-direction: column;
+        /* Stack image and text vertically */
+        align-items: center;
+        /* Center align the content */
+        text-align: center;
+        /* Ensure text is centered */
+    }
+
+    /* Adjust images to be full width and moved to the top */
+    .placeholder-image {
+        width: 100%;
+        /* Make the image full width */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin-bottom: 15px;
+        /* Add space between the image and text */
+    }
+
+    /* Ensure the text content is centered and takes full width */
+    .service-content h3 {
+        font-size: 1.6rem;
+        /* Adjust heading size */
+        margin-bottom: 10px;
+        /* Add space below the heading */
+        font-family: 'content-font';
+    }
+
+    .service-content p {
+        font-size: 1rem;
+        /* Adjust text size for better readability */
+        color: #2c3e50;
+        /* Text color */
+        line-height: 1.6;
+        /* Better line spacing */
+        margin-bottom: 15px;
+        /* Add space below paragraphs */
+    }
+
+    /* Adjust the links for better display */
+    .service-content a {
+        color: black;
+        /* Color for links */
+        text-decoration: none;
+        /* Remove underline */
+    }
+
+    .service-content a:hover {
+        color: #16a085;
+        /* Change color on hover */
+    }
+
+    /* Team Section */
+    #team {
+        min-height: 1650px;
+    }
+
+    .team-member {
+        min-width: 250px;
+        min-height: 985px;
+        /* Adjust width for medium screens */
+        /* height: 300px; */
+        /* padding: 15px; */
+        /* Keep it square */
+    }
+
+    .team-content {
+        top: 50px;
+    }
+
+    .team-grid {
+        flex-direction: column;
+        /* Stack the team members vertically on smaller screens */
+        align-items: center;
+        /* Center align vertically */
+    }
+
+    /* News Section */
+    .news-card {
+        max-width: 90%;
+        /* Adjust card width for smaller screens */
+        height: auto;
+        /* Allow flexible height */
+        width: 90%;
+        /* Allow cards to adjust to smaller screen width */
+        margin: 0 15px;
+        /* Adjust spacing between cards */
+            
+    }
+
+    /* Contact Section */
+    .contact-flex {
+        flex-direction: column;
+    }
+
+    .contact-info, .contact-form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* 753px Screen Width */
+@media screen and (max-width: 753px) {
+    #footer-logo-container {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 715px){
+    .hero {
+        min-height: 550px;
+    }
+    
+    #welcome-container {
+        box-sizing: border-box;
+        /* Ensures that the padding wont go outside the section bounds */
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* 600px Screen Width */
+@media screen and (max-width: 600px) {
+    
+    /* General */
+
+    h1, h2, h3 {
+        font-size: 1.2rem;
+        /* Adjust header sizes */
+    }
+    
+    p {
+        font-size: 0.9rem;
+        /* Adjust paragraph font size */
+    }
+    
+    /* Header Section */
+
+    .hero {
+        min-height: 750px;
+    }
+
+    /* Contact Section */
+
+    .google-form-container {
+    padding-bottom: 80%;
+    /* Adjusted aspect ratio for smaller screens */
+    }
+}
+
+
+
+/* 480px Screen Width */
+@media screen and (max-width: 480px) {
+
+    /* Services Section */
+    .service-content h3 {
+        font-family: 'content-font';
+        font-size: 1.4rem;
+    }
+
+    /* Make the paragraph text smaller */
+    .service-content p {
+        font-size: 0.9rem;
+        /* Reduce font size for smaller screens */
+    }
+
+    /* Team Section */
+    #team {
+        min-height: 2000px;
+    }
+    
+    .team-member {
+        width: 250px;
+        min-height: 925px;
+    }
+
+    .team-content {
+        top: 20px;
+    }
+
+    .team-image {
+        min-width: 200px;
+        /* Smaller image size for small screens */
+        min-height: 200px;
+        /* Smaller image size for small screens */
+    }
+
+    /* News Section */
+    .news-card {
+        max-width: 100%;
+        /* Full width for mobile devices */
+        height: auto;
+    }
+    
+    .news-text h3 {
+        font-size: 18px;
+        /* Adjust the title font size for smaller screens */
+    }
+
+    .news-text p {
+        font-size: 14px;
+        /* Adjust description font size */
+    }
+}
+
+/* 430px Screen Width */
+@media screen and (max-width: 430px) {
+    
+    
+    /* Header Section */
+
+    header .logo {
+        width: 110px;
+        left: 50px;
+        top: 20px;
+    }
+
+    header .navbar {
+        right: -10px;
+    }
+
+    /* Home Section */
+
+    .hero {
+        height: 850px;
+    }
+
+    #welcome-container {
+        box-sizing: border-box;   /* Ensures that the padding wont go outside the section bounds */     
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* About Section */
+
+    #about {
+        min-height: 780px;
+    }
+
+    #about-main.container {
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Team Section */
+    #team {
+        min-height: 2200px;
+    }
+    
+    .team-member {
+        min-height: 975px;
+
+    }
+
+    .team-content {
+        height: 900px;
+        padding-top: 20px;
+    }
+
+    /* Contact Section */
+    #contact {
+        height: 1200px;
+    }
+    
+    .contact-flex {
+        top: 80px;
+        align-items: center;
+    }
+
+    .google-form-container {
+        box-sizing: border-box;
+        align-items: center;
+        max-width: 260px;
+    }
+
+    #google-form {
+        width: 260px;
+
+    }
+
+    #footer-logo-container {
+        display: none;
+    }
+
+    #footer-placeholder-container {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 360px) {
+    .hero {
+        min-height: 900px;
+    }
+}
+
+
+/* 344px Screen Width */
+@media screen and (max-width: 344px)  {
+    
+    .hero {
+        min-height: 1000px;
+    }
+
+    .team-member {
+        max-width: 250px;
+    }
+}
