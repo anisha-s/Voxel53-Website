@@ -147,8 +147,8 @@ header nav ul li a:hover::after {
 .nav-menu {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: 'content-font', sans-serif;
 }
 
@@ -167,7 +167,7 @@ header nav ul li a:hover::after {
     border: none;
     background: transparent;
     cursor: pointer;
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 @media screen and (max-width: 1116px) {
@@ -181,8 +181,8 @@ header nav ul li a:hover::after {
         width: 100vw;
         position: absolute;
         top: 70px;
-        right: -50px;
-        padding: 20px;
+        right: -20px;
+        /* padding: 20px; */
         background-color: white;
         display: none;
         /* Hide the menu initially */
@@ -297,13 +297,13 @@ header nav ul li a:hover::after {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 
 }
 
 #about-voxel-logo {
     width: 200px;
     height: 138px;
-    padding-top: 18px;
     padding-right: 20px;
 
 }
@@ -669,7 +669,7 @@ header nav ul li a:hover::after {
 .contact-flex {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: 100%;
     padding: 0 80px;
 }
@@ -727,7 +727,7 @@ footer p {
 
 /* ------------------------------ Responsive Media Tags ------------------------------ */
 
-/* 1160px Screen Width */
+/* ----------------------------- 1160px Screen Width ----------------------------- */
 @media screen and (max-width: 1160px) {
     #team {
         min-height: 1620px;
@@ -738,7 +738,20 @@ footer p {
     }
 }
 
-/* 900px Screen Width */
+/* ----------------------------- 965px Screen Width ----------------------------- */
+@media screen and (max-width: 965px) {
+    /* Footer Seciton */
+    #footer-logo-container img {
+        width: 100px
+    }
+
+    #footer-placeholder-container {
+        width: 100px;
+    }
+}
+
+
+/* ----------------------------- 900px Screen Width ----------------------------- */
 @media screen and (max-width: 900px){
     h1,h2,h3 {
         font-size: 1.4rem;
@@ -756,7 +769,7 @@ footer p {
         }
 }
 
-/* 890px Screen Width */
+/* ----------------------------- 890px Screen Width ----------------------------- */
 @media screen and (max-width: 890px){
     
     /* About Section */
@@ -799,7 +812,20 @@ footer p {
 
 }
 
-/* 840px Screen Width */
+/* ----------------------------- 865px Screen Width ----------------------------- */
+@media screen and (max-width: 865px){
+    
+    /* Footer Section */
+    #footer-logo-container {
+        display: none;
+    }
+
+    #footer-placeholder-container {
+        display: none;
+    }
+}
+
+/* ----------------------------- 840px Screen Width ----------------------------- */
 @media screen and (max-width: 840px){
     #about {
         min-height: 600px;
@@ -817,14 +843,14 @@ footer p {
     }
 }
 
-/* 800px Screen Width */
+/* ----------------------------- 800px Screen Width ----------------------------- */
 @media screen and (max-width: 800px) {
     #about {
         min-height: 620px;
     }
 }
 
-/* 768px Screen Width */
+/* ----------------------------- 768px Screen Width ----------------------------- */
 @media screen and (max-width: 768px) {
 
     /* Header Section */
@@ -888,19 +914,13 @@ footer p {
     }
 
     /* Services Section */
-    #services .container {
-        /* padding: 20px; */
-        /* Add padding around the section */
-    }
 
-    /* Stack the service cards vertically */
     .service {
         /* width: 100%; Full width for each service */
         margin-bottom: 20px;
         /* Add space between the service cards */
     }
 
-    /* Adjust service content layout */
     .service-content {
         display: flex;
         flex-direction: column;
@@ -961,7 +981,7 @@ footer p {
 
     .team-member {
         min-width: 250px;
-        min-height: 985px;
+        min-height: 700px;
         /* Adjust width for medium screens */
         /* height: 300px; */
         /* padding: 15px; */
@@ -1001,15 +1021,17 @@ footer p {
         width: 100%;
         margin-bottom: 20px;
     }
+
 }
 
-/* 753px Screen Width */
+/* ----------------------------- 753px Screen Width ----------------------------- */
 @media screen and (max-width: 753px) {
     #footer-logo-container {
         display: none;
     }
 }
 
+/* ----------------------------- 715px Screen Width ----------------------------- */
 @media screen and (max-width: 715px){
     .hero {
         min-height: 550px;
@@ -1023,7 +1045,7 @@ footer p {
     }
 }
 
-/* 600px Screen Width */
+/* ----------------------------- 600px Screen Width ----------------------------- */
 @media screen and (max-width: 600px) {
     
     /* General */
@@ -1052,9 +1074,7 @@ footer p {
     }
 }
 
-
-
-/* 480px Screen Width */
+/* ----------------------------- 480px Screen Width ----------------------------- */
 @media screen and (max-width: 480px) {
 
     /* Services Section */
@@ -1080,7 +1100,7 @@ footer p {
     }
 
     .team-content {
-        top: 20px;
+        top: 0px;
     }
 
     .team-image {
@@ -1106,21 +1126,37 @@ footer p {
         font-size: 14px;
         /* Adjust description font size */
     }
+
 }
 
-/* 430px Screen Width */
-@media screen and (max-width: 430px) {
-    
+/* ----------------------------- 448px Screen Width ----------------------------- */
+@media screen and (max-width: 448px) {
     
     /* Header Section */
-
     header .logo {
         width: 110px;
         left: 50px;
         top: 20px;
     }
+}
+
+/* ----------------------------- 430px Screen Width ----------------------------- */
+@media screen and (max-width: 430px) {
+    
+    
+    /* Header Section */
+
+    /* header .logo {
+        width: 110px;
+        left: 50px;
+        top: 20px;
+    } */
 
     header .navbar {
+        right: -10px;
+    }
+
+    header .nav-menu {
         right: -10px;
     }
 
@@ -1183,24 +1219,16 @@ footer p {
 
     }
 
-    #footer-logo-container {
-        display: none;
-    }
-
-    #footer-placeholder-container {
-        display: none;
-    }
-
 }
 
+/* ----------------------------- 360px Screen Width ----------------------------- */
 @media screen and (max-width: 360px) {
     .hero {
         min-height: 900px;
     }
 }
 
-
-/* 344px Screen Width */
+/* ----------------------------- 344px Screen Width ----------------------------- */
 @media screen and (max-width: 344px)  {
     
     .hero {
