@@ -660,7 +660,6 @@ header nav ul li a:hover::after {
     background-repeat: no-repeat;
     background-position: 0 0%;
     background-size: auto auto;
-    height: 785px;
     padding-bottom: 0px;
 }
 
@@ -673,7 +672,6 @@ header nav ul li a:hover::after {
     justify-content: center;
     align-items: center;
     height: 100%;
-    /* padding: 0 80px; */
     width: 100%
 }
 
@@ -763,11 +761,6 @@ footer p {
         font-size: 1rem;
         /* Adjust paragraph size for readability */
     }
-
-        .google-form-container {
-            padding-bottom: 100%;
-            /* Adjusted aspect ratio for medium-sized screens */
-        }
 }
 
 /* ----------------------------- 890px Screen Width ----------------------------- */
@@ -791,14 +784,9 @@ footer p {
     }
 
     /* Contact Section */
-    #contact {
-        min-height: 1100px;
-    }
-    
     .contact-flex {
         flex-direction: column;
         position: relative;
-        top: 370px;
     }
 
     .contact-info,
@@ -1043,12 +1031,6 @@ footer p {
         /* Adjust paragraph font size */
     }
 
-    /* Contact Section */
-
-    .google-form-container {
-    padding-bottom: 80%;
-    /* Adjusted aspect ratio for smaller screens */
-    }
 }
 
 /* ----------------------------- 480px Screen Width ----------------------------- */
@@ -1159,12 +1141,10 @@ footer p {
 
     /* Contact Section */
     #contact {
-        height: 1200px;
         align-items: center;
     }
     
     .contact-flex {
-        top: 80px;
         align-items: center;
     }
 
