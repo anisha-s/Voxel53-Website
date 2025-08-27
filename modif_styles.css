@@ -25,6 +25,8 @@ body {
     padding: 60px 20px;
     text-align: center;
     font-family: 'content-font', sans-serif;
+    display: flex;
+    height: auto;
 }
 
 .section h2 {
@@ -206,7 +208,7 @@ header nav ul li a:hover::after {
     background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
     color: #fff;
     text-align: center;
-    height: 470px;
+    height: auto;
     width: 100%;
     transition: all 0.5 ease-in-out;
     align-items: center;
@@ -262,7 +264,7 @@ header nav ul li a:hover::after {
 
 /* ------------------------------ About Section ------------------------------ */
 #about {
-    height: 250px;
+    height: auto;
 }
 
 .about-us {
@@ -427,7 +429,7 @@ header nav ul li a:hover::after {
     background-repeat: no-repeat;
     background-position: 0 0%;
     background-size: auto auto;
-    height: 900px;
+    height: auto;
 }
 
 
@@ -729,10 +731,7 @@ footer p {
 
 /* ----------------------------- 1160px Screen Width ----------------------------- */
 @media screen and (max-width: 1160px) {
-    #team {
-        min-height: 1620px;
-    }
-    
+
     .team-grid {
         flex-direction: column;
     }
@@ -773,10 +772,6 @@ footer p {
 @media screen and (max-width: 890px){
     
     /* About Section */
-    #about {
-        min-height: 550px;
-    }
-
     #about-voxel-container {
         flex-direction: column;
         justify-content: center;
@@ -795,7 +790,7 @@ footer p {
 
     /* Contact Section */
     #contact {
-        min-height: 1000px;
+        min-height: 1100px;
     }
     
     .contact-flex {
@@ -827,10 +822,8 @@ footer p {
 
 /* ----------------------------- 840px Screen Width ----------------------------- */
 @media screen and (max-width: 840px){
-    #about {
-        min-height: 600px;
-    }
 
+    /* About Section */
     #about-voxel-container {
         flex-direction: column;
         justify-content: center;
@@ -844,11 +837,9 @@ footer p {
 }
 
 /* ----------------------------- 800px Screen Width ----------------------------- */
-@media screen and (max-width: 800px) {
-    #about {
-        min-height: 620px;
-    }
-}
+/* @media screen and (max-width: 800px) {
+
+} */
 
 /* ----------------------------- 768px Screen Width ----------------------------- */
 @media screen and (max-width: 768px) {
@@ -894,10 +885,6 @@ footer p {
     }
 
     /* About Section */
-    #about {
-        min-height: 650px;
-    }
-
     #about-main-container {
         flex-direction: column;
         justify-content: center;
@@ -975,10 +962,6 @@ footer p {
     }
 
     /* Team Section */
-    #team {
-        min-height: 1650px;
-    }
-
     .team-member {
         min-width: 250px;
         min-height: 700px;
@@ -1033,10 +1016,8 @@ footer p {
 
 /* ----------------------------- 715px Screen Width ----------------------------- */
 @media screen and (max-width: 715px){
-    .hero {
-        min-height: 550px;
-    }
-    
+
+    /* Hero Section */
     #welcome-container {
         box-sizing: border-box;
         /* Ensures that the padding wont go outside the section bounds */
@@ -1058,12 +1039,6 @@ footer p {
     p {
         font-size: 0.9rem;
         /* Adjust paragraph font size */
-    }
-    
-    /* Header Section */
-
-    .hero {
-        min-height: 750px;
     }
 
     /* Contact Section */
@@ -1090,10 +1065,6 @@ footer p {
     }
 
     /* Team Section */
-    #team {
-        min-height: 2000px;
-    }
-    
     .team-member {
         width: 250px;
         min-height: 925px;
@@ -1161,11 +1132,6 @@ footer p {
     }
 
     /* Home Section */
-
-    .hero {
-        height: 850px;
-    }
-
     #welcome-container {
         box-sizing: border-box;   /* Ensures that the padding wont go outside the section bounds */     
         padding-left: 10px;
@@ -1173,21 +1139,12 @@ footer p {
     }
 
     /* About Section */
-
-    #about {
-        min-height: 780px;
-    }
-
     #about-main.container {
         align-items: center;
         justify-content: center;
     }
 
     /* Team Section */
-    #team {
-        min-height: 2200px;
-    }
-    
     .team-member {
         min-height: 975px;
 
@@ -1223,18 +1180,11 @@ footer p {
 
 /* ----------------------------- 360px Screen Width ----------------------------- */
 @media screen and (max-width: 360px) {
-    .hero {
-        min-height: 900px;
-    }
+
 }
 
 /* ----------------------------- 344px Screen Width ----------------------------- */
 @media screen and (max-width: 344px)  {
-    
-    .hero {
-        min-height: 1000px;
-    }
-
     .team-member {
         max-width: 250px;
     }
