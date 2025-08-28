@@ -696,6 +696,33 @@ header nav ul li a:hover::after {
     font-weight: bold;
 }
 
+.nidus-contact-link {
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    top: 15px;
+    position: relative;
+    background-color: #198ABE;
+    border-radius: 10px;
+
+}
+
+.nidus-contact-img {
+    width: 25px;
+    height: 25px;
+}
+
+#nidus-contact-icon {
+    width: 40px;
+    height: 40px;
+    top: 8px;
+}
+
+#nidus-contact-icon-img {
+    top: 7px;
+    position: relative;
+}
+
 /* ------------------------------ Footer Section ------------------------------ */
 footer {
     background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
@@ -771,6 +798,19 @@ footer p {
     top: 15px;
     font-size: 15px;
     font-weight: bold;
+}
+
+#nidus-footer-link {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    top: 8px;
+}
+
+#nidus-footer-linkedin {
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 
@@ -852,6 +892,7 @@ footer p {
     #social-media-contacts {
         display: flex;
         flex-direction: row;
+        margin-bottom: 20px;
     }
 
     /* Footer Section */
@@ -1111,7 +1152,7 @@ footer p {
     .team-image {
         min-width: 200px;
         /* Smaller image size for small screens */
-        min-height: 200px;
+        min-height: 300px;
         /* Smaller image size for small screens */
     }
 
