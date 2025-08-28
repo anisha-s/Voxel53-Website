@@ -18,7 +18,6 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    /* padding: 20px; */
 }
 
 .section {
@@ -238,7 +237,7 @@ header nav ul li a:hover::after {
     position: relative;
     width: 100%;
     left: 0px;
-    text-align: left;
+    text-align: justify;
     padding-bottom: 0px;
 }
 
@@ -250,7 +249,7 @@ header nav ul li a:hover::after {
     font-family: 'content-font', sans-serif;
     position: relative;
     /* left: 100px; */
-    text-align: left;
+    text-align: justify;
 
 }
 
@@ -408,7 +407,7 @@ header nav ul li a:hover::after {
 
 .service p {
     font-size: 1rem;
-    text-align: left;
+    text-align: justify;
 }
 
 .service-links {
@@ -467,9 +466,9 @@ header nav ul li a:hover::after {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 500px;
-    height: 700px;
+    height: 650px;
     background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -522,7 +521,7 @@ header nav ul li a:hover::after {
 }
 
 .team-description {
-    text-align: left;
+    text-align: justify;
     color: white;
 }
 
@@ -1142,7 +1141,7 @@ footer p {
     /* Team Section */
     .team-member {
         width: 250px;
-        min-height: 925px;
+        min-height: 1000px;
     }
 
     .team-content {
@@ -1214,7 +1213,7 @@ footer p {
 
     /* Team Section */
     .team-member {
-        min-height: 975px;
+        min-height: 1050px;
 
     }
 
