@@ -1098,6 +1098,11 @@ footer p {
 @media screen and (max-width: 715px){
 
     /* Hero Section */
+
+    #welcome-message {
+        text-align: center;
+    }
+
     #welcome-container {
         box-sizing: border-box;
         /* Ensures that the padding wont go outside the section bounds */
