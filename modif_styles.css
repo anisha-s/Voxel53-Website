@@ -642,7 +642,7 @@ header nav ul li a:hover::after {
 }
 
 .dot.active {
-    background-color: #8f44d4;
+    background-color: rgb(13, 78, 116);
     /* Active dot color */
 }
 
@@ -685,6 +685,17 @@ header nav ul li a:hover::after {
     width: auto;
 }
 
+#social-media-contacts {
+    display: none;
+}
+
+#linkedin-label-contacts {
+    position: relative;
+    left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
 /* ------------------------------ Footer Section ------------------------------ */
 footer {
     background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
@@ -702,13 +713,16 @@ footer p {
 }
 
 #footer-placeholder-container {
-    width: 150px;
-    height: 40px;
+    width: 100px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
 }
 
 #footer-main-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-evenly;
     top: 20px;
 }
@@ -726,6 +740,40 @@ footer p {
     font-family: 'content-font', sans-serif;
     font-weight: bold;
 }
+
+.fa {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 40px;
+    height: 0px;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    top: 8px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+#linkedin-label-footer {
+    position: relative;
+    left: 10px;
+    top: 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
 
 /* ------------------------------ Responsive Media Tags ------------------------------ */
 
@@ -799,11 +847,18 @@ footer p {
 
 /* ----------------------------- 865px Screen Width ----------------------------- */
 @media screen and (max-width: 865px){
-    
+
+    /* Contact Section */
+    #social-media-contacts {
+        display: flex;
+        flex-direction: row;
+    }
+
     /* Footer Section */
     #footer-logo-container {
         display: none;
     }
+
 
     #footer-placeholder-container {
         display: none;
@@ -893,7 +948,6 @@ footer p {
     /* Services Section */
 
     .service {
-        /* width: 100%; Full width for each service */
         margin-bottom: 20px;
         /* Add space between the service cards */
     }
@@ -955,10 +1009,6 @@ footer p {
     .team-member {
         min-width: 250px;
         min-height: 700px;
-        /* Adjust width for medium screens */
-        /* height: 300px; */
-        /* padding: 15px; */
-        /* Keep it square */
     }
 
     .team-content {
@@ -1100,13 +1150,6 @@ footer p {
     
     
     /* Header Section */
-
-    /* header .logo {
-        width: 110px;
-        left: 50px;
-        top: 20px;
-    } */
-
     header .navbar {
         right: -10px;
     }
