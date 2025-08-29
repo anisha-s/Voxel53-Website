@@ -206,7 +206,7 @@ header nav ul li a:hover::after {
 .hero {
     background: linear-gradient(to bottom, rgb(13, 78, 116), rgb(61, 146, 114));
     color: #fff;
-    text-align: center;
+    text-align: left;
     height: auto;
     width: 100%;
     transition: all 0.5 ease-in-out;
